@@ -887,6 +887,10 @@ extension _BridgedSwiftStruct {
         return Self(unsafelyCopying: jsObject)
     }
 
+    @_spi(BridgeJS) public static func bridgeJSLiftReturn() -> Self {
+        bridgeJSStackPop()
+    }
+
     @_spi(BridgeJS) public static func bridgeJSLiftParameter() -> Self {
         bridgeJSStackPop()
     }
