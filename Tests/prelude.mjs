@@ -5,6 +5,7 @@ import {
 } from '../.build/plugins/PackageToJS/outputs/PackageTests/bridge-js.js';
 import { ImportedFoo } from './BridgeJSRuntimeTests/JavaScript/Types.mjs';
 import { runJsOptionalSupportTests } from './BridgeJSRuntimeTests/JavaScript/OptionalSupportTests.mjs';
+import { runAliasWorks, runAliasAsyncWorks, getImports as getAliasImports, Surface } from './BridgeJSRuntimeTests/JavaScript/AliasTests.mjs';
 import { getImports as getClosureSupportImports } from './BridgeJSRuntimeTests/JavaScript/ClosureSupportTests.mjs';
 import { getImports as getSwiftClassSupportImports } from './BridgeJSRuntimeTests/JavaScript/SwiftClassSupportTests.mjs';
 import { getImports as getOptionalSupportImports } from './BridgeJSRuntimeTests/JavaScript/OptionalSupportTests.mjs';
@@ -96,6 +97,7 @@ export async function setupOptions(options, context) {
                 },
                 ArrayElementObject,
                 JSClassWithArrayMembers,
+                Surface,
                 JsGreeter: class {
                     /**
                      * @param {string} name
@@ -130,6 +132,14 @@ export async function setupOptions(options, context) {
                     await runAsyncWorksTests(exports);
                     return;
                 },
+                runAliasAsyncWorks: async () => {
+                    const exports = importsContext.getExports();
+                    if (!exports) {
+                        throw new Error("No exports!?");
+                    }
+                    await runAliasAsyncWorks(exports);
+                    return;
+                },
                 AsyncImportImports: getAsyncImportImports(importsContext),
                 fetchWeatherData: (city) => {
                     return Promise.resolve({
@@ -159,6 +169,7 @@ export async function setupOptions(options, context) {
                 IntegerTypesSupportImports: getIntegerTypesSupportImports(importsContext),
                 JSTypedArrayImports: getJSTypedArrayImports(importsContext),
                 IdentityModeTestImports: getIdentityModeTestImports(importsContext),
+                AliasImports: getAliasImports(importsContext),
             };
         },
         addToCoreImports(importObject, importsContext) {
@@ -181,6 +192,13 @@ export async function setupOptions(options, context) {
                     throw new Error("No exports!?");
                 }
                 return BridgeJSRuntimeTests_runJsStructWorks(exports);
+            }
+            bridgeJSRuntimeTests["runAliasWorks"] = () => {
+                const exports = getExports();
+                if (!exports) {
+                    throw new Error("No exports!?");
+                }
+                runAliasWorks(exports);
             }
             const bridgeJSGlobalTests = importObject["BridgeJSGlobalTests"] || {};
             bridgeJSGlobalTests["runJsWorksGlobal"] = () => {
