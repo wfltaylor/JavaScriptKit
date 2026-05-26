@@ -1526,6 +1526,8 @@ public struct BridgeJSLink {
                 }
             }
             return type.tsType
+        case .alias(_, let underlying):
+            return resolveTypeScriptType(underlying, exportedSkeletons: exportedSkeletons)
         case .nullable(let wrapped, let kind):
             let base = resolveTypeScriptType(wrapped, exportedSkeletons: exportedSkeletons)
             return "\(base) | \(kind.absenceLiteral)"
@@ -3754,6 +3756,8 @@ extension BridgeType {
             return "\(inner)[]"
         case .dictionary(let valueType):
             return "Record<string, \(valueType.tsType)>"
+        case .alias(_, let underlying):
+            return underlying.tsType
         }
     }
 
