@@ -90,3 +90,7 @@ public struct JSException: Error, Equatable, CustomStringConvertible {
             && lhs.storage.stack == rhs.storage.stack
     }
 }
+
+extension JSException: ConvertibleToJSException {
+    public var jsException: JSException { self }
+}

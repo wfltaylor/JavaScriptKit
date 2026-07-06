@@ -7988,16 +7988,7 @@ public func _bjs_validatePolygon(_ polygon: UnsafeMutableRawPointer) -> UnsafeMu
         let ret = try validatePolygon(_: Polygon.bridgeJSLiftParameter(polygon))
         return ret.bridgeJSLowerReturn()
     } catch let error {
-        if let error = error.thrownValue.object {
-            withExtendedLifetime(error) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        } else {
-            let jsError = JSError(message: error.description)
-            withExtendedLifetime(jsError.jsObject) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        }
+        error.bridgeJSLowerThrow()
         return UnsafeMutableRawPointer(bitPattern: -1).unsafelyUnwrapped
     }
     #else
@@ -8290,16 +8281,7 @@ public func _bjs_runValidator(_ validate: Int32) -> Int32 {
         let ret = try runValidator(_: _BJS_Closure_20BridgeJSRuntimeTestsKSS_Sb.bridgeJSLift(validate))
         return ret.bridgeJSLowerReturn()
     } catch let error {
-        if let error = error.thrownValue.object {
-            withExtendedLifetime(error) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        } else {
-            let jsError = JSError(message: error.description)
-            withExtendedLifetime(jsError.jsObject) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        }
+        error.bridgeJSLowerThrow()
         return 0
     }
     #else
@@ -8501,16 +8483,7 @@ public func _bjs_makeImportedFoo(_ valueBytes: Int32, _ valueLength: Int32) -> I
         let ret = try makeImportedFoo(value: String.bridgeJSLiftParameter(valueBytes, valueLength))
         return ret.bridgeJSLowerReturn()
     } catch let error {
-        if let error = error.thrownValue.object {
-            withExtendedLifetime(error) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        } else {
-            let jsError = JSError(message: error.description)
-            withExtendedLifetime(jsError.jsObject) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        }
+        error.bridgeJSLowerThrow()
         return 0
     }
     #else
@@ -8529,6 +8502,21 @@ public func _bjs_roundTripOptionalImportedClass(_ vIsSome: Int32, _ vValue: Int3
     #endif
 }
 
+@_expose(wasm, "bjs_throwsStringError")
+@_cdecl("bjs_throwsStringError")
+public func _bjs_throwsStringError() -> Void {
+    #if arch(wasm32)
+    do {
+        try throwsStringError()
+    } catch let error {
+        error.bridgeJSLowerThrow()
+        return
+    }
+    #else
+    fatalError("Only available on WebAssembly")
+    #endif
+}
+
 @_expose(wasm, "bjs_throwsSwiftError")
 @_cdecl("bjs_throwsSwiftError")
 public func _bjs_throwsSwiftError(_ shouldThrow: Int32) -> Void {
@@ -8536,16 +8524,7 @@ public func _bjs_throwsSwiftError(_ shouldThrow: Int32) -> Void {
     do {
         try throwsSwiftError(shouldThrow: Bool.bridgeJSLiftParameter(shouldThrow))
     } catch let error {
-        if let error = error.thrownValue.object {
-            withExtendedLifetime(error) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        } else {
-            let jsError = JSError(message: error.description)
-            withExtendedLifetime(jsError.jsObject) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        }
+        error.bridgeJSLowerThrow()
         return
     }
     #else
@@ -8561,16 +8540,7 @@ public func _bjs_throwsWithIntResult() -> Int32 {
         let ret = try throwsWithIntResult()
         return ret.bridgeJSLowerReturn()
     } catch let error {
-        if let error = error.thrownValue.object {
-            withExtendedLifetime(error) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        } else {
-            let jsError = JSError(message: error.description)
-            withExtendedLifetime(jsError.jsObject) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        }
+        error.bridgeJSLowerThrow()
         return 0
     }
     #else
@@ -8586,16 +8556,7 @@ public func _bjs_throwsWithStringResult() -> Void {
         let ret = try throwsWithStringResult()
         return ret.bridgeJSLowerReturn()
     } catch let error {
-        if let error = error.thrownValue.object {
-            withExtendedLifetime(error) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        } else {
-            let jsError = JSError(message: error.description)
-            withExtendedLifetime(jsError.jsObject) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        }
+        error.bridgeJSLowerThrow()
         return
     }
     #else
@@ -8611,16 +8572,7 @@ public func _bjs_throwsWithBoolResult() -> Int32 {
         let ret = try throwsWithBoolResult()
         return ret.bridgeJSLowerReturn()
     } catch let error {
-        if let error = error.thrownValue.object {
-            withExtendedLifetime(error) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        } else {
-            let jsError = JSError(message: error.description)
-            withExtendedLifetime(jsError.jsObject) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        }
+        error.bridgeJSLowerThrow()
         return 0
     }
     #else
@@ -8636,16 +8588,7 @@ public func _bjs_throwsWithFloatResult() -> Float32 {
         let ret = try throwsWithFloatResult()
         return ret.bridgeJSLowerReturn()
     } catch let error {
-        if let error = error.thrownValue.object {
-            withExtendedLifetime(error) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        } else {
-            let jsError = JSError(message: error.description)
-            withExtendedLifetime(jsError.jsObject) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        }
+        error.bridgeJSLowerThrow()
         return 0.0
     }
     #else
@@ -8661,16 +8604,7 @@ public func _bjs_throwsWithDoubleResult() -> Float64 {
         let ret = try throwsWithDoubleResult()
         return ret.bridgeJSLowerReturn()
     } catch let error {
-        if let error = error.thrownValue.object {
-            withExtendedLifetime(error) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        } else {
-            let jsError = JSError(message: error.description)
-            withExtendedLifetime(jsError.jsObject) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        }
+        error.bridgeJSLowerThrow()
         return 0.0
     }
     #else
@@ -8686,16 +8620,7 @@ public func _bjs_throwsWithSwiftHeapObjectResult() -> UnsafeMutableRawPointer {
         let ret = try throwsWithSwiftHeapObjectResult()
         return ret.bridgeJSLowerReturn()
     } catch let error {
-        if let error = error.thrownValue.object {
-            withExtendedLifetime(error) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        } else {
-            let jsError = JSError(message: error.description)
-            withExtendedLifetime(jsError.jsObject) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        }
+        error.bridgeJSLowerThrow()
         return UnsafeMutableRawPointer(bitPattern: -1).unsafelyUnwrapped
     }
     #else
@@ -8711,16 +8636,7 @@ public func _bjs_throwsWithJSObjectResult() -> Int32 {
         let ret = try throwsWithJSObjectResult()
         return ret.bridgeJSLowerReturn()
     } catch let error {
-        if let error = error.thrownValue.object {
-            withExtendedLifetime(error) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        } else {
-            let jsError = JSError(message: error.description)
-            withExtendedLifetime(jsError.jsObject) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        }
+        error.bridgeJSLowerThrow()
         return 0
     }
     #else
