@@ -186,16 +186,7 @@ public func _bjs_PlayBridgeJS_updateDetailed(_ _self: UnsafeMutableRawPointer, _
         let ret = try _self.updateDetailed(swiftSource: swiftSource, dtsSource: dtsSource)
         return ret.bridgeJSLowerReturn()
     } catch let error {
-        if let error = error.thrownValue.object {
-            withExtendedLifetime(error) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        } else {
-            let jsError = JSError(message: error.description)
-            withExtendedLifetime(jsError.jsObject) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        }
+        error.bridgeJSLowerThrow()
         return
     }
     #else
