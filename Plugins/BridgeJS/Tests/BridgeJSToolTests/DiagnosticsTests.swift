@@ -48,6 +48,57 @@ import Testing
     }
 
     @Test
+    func asyncFunctionThrowingConvertibleErrorIsAccepted() throws {
+        let source = """
+            struct CustomError: ConvertibleToJSException {
+                var jsException: JSException { JSException(message: "Custom") }
+            }
+            @JS func load() async throws(CustomError) -> Int { 1 }
+            """
+        #expect(moduleDiagnostics(source: source) == nil)
+    }
+
+    @Test
+    func untypedThrowsFunctionProducesDiagnostic() throws {
+        let source = """
+            @JS func load() throws -> Int { 1 }
+            """
+        let diagnostics = try #require(moduleDiagnostics(source: source))
+        #expect(diagnostics.description.contains("Thrown type must be specified"))
+    }
+
+    @Test
+    func protocolMethodThrowingJSExceptionOrUntypedIsAccepted() throws {
+        let source = """
+            @JS protocol Delegate {
+                func validate() throws(JSException) -> Int
+                func load() async throws(JSException) -> Int
+                func check() throws -> Int
+                func fetch() async throws -> Int
+            }
+            """
+        #expect(moduleDiagnostics(source: source) == nil)
+    }
+
+    @Test
+    func protocolMethodThrowingCustomErrorProducesDiagnostic() throws {
+        let source = """
+            struct CustomError: ConvertibleToJSException {
+                var jsException: JSException { JSException(message: "Custom") }
+            }
+            @JS protocol Delegate {
+                func validate() throws(CustomError) -> Int
+            }
+            """
+        let diagnostics = try #require(moduleDiagnostics(source: source))
+        #expect(
+            diagnostics.description.contains(
+                "Only JSException or untyped throws is supported for thrown type of protocol methods, got CustomError"
+            )
+        )
+    }
+
+    @Test
     func invalidJSMemberInsideExtensionProducesDiagnostic() throws {
         let source = """
             @JS class Host {

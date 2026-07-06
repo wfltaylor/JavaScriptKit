@@ -621,6 +621,15 @@ function BridgeJSRuntimeTests_runJsWorks(instance, exports) {
         assert.fail("Expected no error");
     }
 
+    // Test ConvertibleToJSException with custom error type
+    try {
+        exports.throwsStringError();
+        assert.fail("Expected error");
+    } catch (error) {
+        assert.ok(error instanceof Error, "Custom error should be an Error instance");
+        assert.equal(error.message, "Custom string error");
+    }
+
     // Test enums
     assert.equal(exports.Direction.North, 0);
     assert.equal(exports.Direction.South, 1);
@@ -1406,6 +1415,33 @@ async function testAsyncProtocolSupport(exports) {
 
     swiftManager.release();
     swiftProcessor.release();
+
+    const untypedThrowsManager = new exports.UntypedThrowsValidatorManager({
+        validate(value) {
+            if (value < 0) {
+                throw new Error("Untyped validator rejects negative values");
+            }
+            return value * 2;
+        },
+        async loadLabel(key) {
+            await Promise.resolve();
+            if (key === "missing") {
+                throw new Error(`No untyped label for ${key}`);
+            }
+            return `untyped:${key}`;
+        },
+    });
+    assert.equal(untypedThrowsManager.validate(21), 42);
+    assert.throws(
+        () => untypedThrowsManager.validate(-1),
+        (error) => error instanceof Error && error.message === "Untyped validator rejects negative values"
+    );
+    assert.equal(await untypedThrowsManager.loadLabel("key"), "untyped:key");
+    await assert.rejects(
+        () => untypedThrowsManager.loadLabel("missing"),
+        (error) => error instanceof Error && error.message === "No untyped label for missing"
+    );
+    untypedThrowsManager.release();
 }
 
 /** @param {import('./../.build/plugins/PackageToJS/outputs/PackageTests/bridge-js.d.ts').Exports} exports */

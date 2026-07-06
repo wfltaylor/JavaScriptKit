@@ -355,6 +355,24 @@ extension MyViewControllerDelegate where Self: _BridgedSwiftProtocolWrapper {
         return resolved
     }
 
+    func check(_ value: Int) throws(JSException) -> Int {
+        let valueValue = value.bridgeJSLowerParameter()
+        let jsObjectValue = jsObject.bridgeJSLowerParameter()
+        let ret = bjs_MyViewControllerDelegate_check(jsObjectValue, valueValue)
+        if let error = _swift_js_take_exception() { throw error }
+        return Int.bridgeJSLiftReturn(ret)
+    }
+
+    func fetchLabel(_ key: String) async throws(JSException) -> String {
+        let resolved = try await _bjs_awaitPromise(makeResolveClosure: { JSTypedClosure<(sending String) -> Void>.sending($0) }, makeRejectClosure: { JSTypedClosure<(sending JSValue) -> Void>.sending($0) }) { resolveRef, rejectRef in
+            key.bridgeJSWithLoweredParameter { (keyWord0, keyWord1, keyWord2) in
+                let jsObjectValue = jsObject.bridgeJSLowerParameter()
+                bjs_MyViewControllerDelegate_fetchLabel(resolveRef, rejectRef, jsObjectValue, keyWord0, keyWord1, keyWord2)
+            }
+        }
+        return resolved
+    }
+
     var eventCount: Int {
         get {
             let jsObjectValue = jsObject.bridgeJSLowerParameter()
@@ -695,6 +713,30 @@ fileprivate func bjs_MyViewControllerDelegate_fetchCount_extern(_ resolveRef: In
 #endif
 @inline(never) fileprivate func bjs_MyViewControllerDelegate_fetchCount(_ resolveRef: Int32, _ rejectRef: Int32, _ jsObject: Int32) -> Void {
     return bjs_MyViewControllerDelegate_fetchCount_extern(resolveRef, rejectRef, jsObject)
+}
+
+#if arch(wasm32)
+@_extern(wasm, module: "TestModule", name: "bjs_MyViewControllerDelegate_check")
+fileprivate func bjs_MyViewControllerDelegate_check_extern(_ jsObject: Int32, _ value: Int32) -> Int32
+#else
+fileprivate func bjs_MyViewControllerDelegate_check_extern(_ jsObject: Int32, _ value: Int32) -> Int32 {
+    fatalError("Only available on WebAssembly")
+}
+#endif
+@inline(never) fileprivate func bjs_MyViewControllerDelegate_check(_ jsObject: Int32, _ value: Int32) -> Int32 {
+    return bjs_MyViewControllerDelegate_check_extern(jsObject, value)
+}
+
+#if arch(wasm32)
+@_extern(wasm, module: "TestModule", name: "bjs_MyViewControllerDelegate_fetchLabel")
+fileprivate func bjs_MyViewControllerDelegate_fetchLabel_extern(_ resolveRef: Int32, _ rejectRef: Int32, _ jsObject: Int32, _ keyWord0: Int32, _ keyWord1: Int32, _ keyWord2: Int32) -> Void
+#else
+fileprivate func bjs_MyViewControllerDelegate_fetchLabel_extern(_ resolveRef: Int32, _ rejectRef: Int32, _ jsObject: Int32, _ keyWord0: Int32, _ keyWord1: Int32, _ keyWord2: Int32) -> Void {
+    fatalError("Only available on WebAssembly")
+}
+#endif
+@inline(never) fileprivate func bjs_MyViewControllerDelegate_fetchLabel(_ resolveRef: Int32, _ rejectRef: Int32, _ jsObject: Int32, _ keyWord0: Int32, _ keyWord1: Int32, _ keyWord2: Int32) -> Void {
+    return bjs_MyViewControllerDelegate_fetchLabel_extern(resolveRef, rejectRef, jsObject, keyWord0, keyWord1, keyWord2)
 }
 
 #if arch(wasm32)
@@ -1226,16 +1268,7 @@ public func _bjs_MyViewController_validateValue(_ _self: UnsafeMutableRawPointer
         let ret = try _self.validateValue(_: value)
         return ret.bridgeJSLowerReturn()
     } catch let error {
-        if let error = error.thrownValue.object {
-            withExtendedLifetime(error) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        } else {
-            let jsError = JSError(message: error.description)
-            withExtendedLifetime(jsError.jsObject) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        }
+        error.bridgeJSLowerThrow()
         return 0
     }
     #else
@@ -1249,8 +1282,15 @@ public func _bjs_MyViewController_loadLabel(_ _self: UnsafeMutableRawPointer, _ 
     #if arch(wasm32)
     let key = String.bridgeJSLiftParameter(keyBytes, keyLength)
     let _self = MyViewController.bridgeJSLiftParameter(_self)
+    func __bjs_body() async throws(JSException) -> String {
+        do {
+            return try await _self.loadLabel(_: key)
+        } catch let error {
+            throw error.bridgeJSAsJSException()
+        }
+    }
     return _bjs_makePromise(resolve: Promise_resolve_SS, reject: Promise_reject) { () async throws(JSException) -> String in
-        return try await _self.loadLabel(_: key)
+        return try await __bjs_body()
     }
     #else
     fatalError("Only available on WebAssembly")

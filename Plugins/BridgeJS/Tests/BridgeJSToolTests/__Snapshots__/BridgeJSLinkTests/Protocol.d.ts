@@ -21,6 +21,8 @@ export interface MyViewControllerDelegate {
     loadLabel(key: string): Promise<string>;
     reset(): Promise<void>;
     fetchCount(): Promise<number>;
+    check(value: number): number;
+    fetchLabel(key: string): Promise<string>;
     eventCount: number;
     readonly delegateName: string;
     optionalName: string | null;

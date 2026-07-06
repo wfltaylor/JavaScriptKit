@@ -911,16 +911,7 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsKSS
         let ret = try closure(param0)
         return ret.bridgeJSLowerReturn()
     } catch let error {
-        if let error = error.thrownValue.object {
-            withExtendedLifetime(error) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        } else {
-            let jsError = JSError(message: error.description)
-            withExtendedLifetime(jsError.jsObject) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        }
+        error.bridgeJSLowerThrow()
         return 0
     }
     #else
@@ -995,16 +986,7 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsKSS
         let ret = try closure(param0)
         return ret.bridgeJSLowerReturn()
     } catch let error {
-        if let error = error.thrownValue.object {
-            withExtendedLifetime(error) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        } else {
-            let jsError = JSError(message: error.description)
-            withExtendedLifetime(jsError.jsObject) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        }
+        error.bridgeJSLowerThrow()
         return 0
     }
     #else
@@ -2642,8 +2624,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaK
     #if arch(wasm32)
     let param0 = String.bridgeJSLiftParameter(param0Bytes, param0Length)
     let closure = Unmanaged<_BridgeJSTypedClosureBox<(String) async throws(JSException) -> String>>.fromOpaque(boxPtr).takeUnretainedValue().closure
+    func __bjs_body() async throws(JSException) -> String {
+        do {
+            return try await closure(param0)
+        } catch let error {
+            throw error.bridgeJSAsJSException()
+        }
+    }
     return _bjs_makePromise(resolve: Promise_resolve_SS, reject: Promise_reject) { () async throws(JSException) -> String in
-        return try await closure(param0)
+        return try await __bjs_body()
     }
     #else
     fatalError("Only available on WebAssembly")
@@ -2713,8 +2702,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaK
     #if arch(wasm32)
     let param0 = String.bridgeJSLiftParameter(param0Bytes, param0Length)
     let closure = Unmanaged<_BridgeJSTypedClosureBox<(String) async throws(JSException) -> Void>>.fromOpaque(boxPtr).takeUnretainedValue().closure
+    func __bjs_body() async throws(JSException) -> Void {
+        do {
+            try await closure(param0)
+        } catch let error {
+            throw error.bridgeJSAsJSException()
+        }
+    }
     return _bjs_makePromise(resolve: Promise_resolve_y, reject: Promise_reject) { () async throws(JSException) -> Void in
-        try await closure(param0)
+        try await __bjs_body()
     }
     #else
     fatalError("Only available on WebAssembly")
@@ -2784,8 +2780,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaK
     #if arch(wasm32)
     let param0 = Bool.bridgeJSLiftParameter(param0)
     let closure = Unmanaged<_BridgeJSTypedClosureBox<(Bool) async throws(JSException) -> AsyncPayloadResult>>.fromOpaque(boxPtr).takeUnretainedValue().closure
+    func __bjs_body() async throws(JSException) -> AsyncPayloadResult {
+        do {
+            return try await closure(param0)
+        } catch let error {
+            throw error.bridgeJSAsJSException()
+        }
+    }
     return _bjs_makePromise(resolve: Promise_resolve_18AsyncPayloadResultO, reject: Promise_reject) { () async throws(JSException) -> AsyncPayloadResult in
-        return try await closure(param0)
+        return try await __bjs_body()
     }
     #else
     fatalError("Only available on WebAssembly")
@@ -4941,6 +4944,58 @@ fileprivate func bjs_DataProcessor_optionalHelper_set_extern(_ jsObject: Int32, 
 #endif
 @inline(never) fileprivate func bjs_DataProcessor_optionalHelper_set(_ jsObject: Int32, _ newValueIsSome: Int32, _ newValuePointer: UnsafeMutableRawPointer) -> Void {
     return bjs_DataProcessor_optionalHelper_set_extern(jsObject, newValueIsSome, newValuePointer)
+}
+
+extension UntypedThrowsValidator where Self: _BridgedSwiftProtocolWrapper {
+    func validate(_ value: Int) throws(JSException) -> Int {
+        let valueValue = value.bridgeJSLowerParameter()
+        let jsObjectValue = jsObject.bridgeJSLowerParameter()
+        let ret = bjs_UntypedThrowsValidator_validate(jsObjectValue, valueValue)
+        if let error = _swift_js_take_exception() { throw error }
+        return Int.bridgeJSLiftReturn(ret)
+    }
+
+    func loadLabel(_ key: String) async throws(JSException) -> String {
+        let resolved = try await _bjs_awaitPromise(makeResolveClosure: { JSTypedClosure<(sending String) -> Void>.sending($0) }, makeRejectClosure: { JSTypedClosure<(sending JSValue) -> Void>.sending($0) }) { resolveRef, rejectRef in
+            key.bridgeJSWithLoweredParameter { (keyWord0, keyWord1, keyWord2) in
+                let jsObjectValue = jsObject.bridgeJSLowerParameter()
+                bjs_UntypedThrowsValidator_loadLabel(resolveRef, rejectRef, jsObjectValue, keyWord0, keyWord1, keyWord2)
+            }
+        }
+        return resolved
+    }
+}
+
+struct AnyUntypedThrowsValidator: UntypedThrowsValidator, _BridgedSwiftProtocolWrapper {
+    let jsObject: JSObject
+
+    static func bridgeJSLiftParameter(_ value: Int32) -> Self {
+        return AnyUntypedThrowsValidator(jsObject: JSObject(id: UInt32(bitPattern: value)))
+    }
+}
+
+#if arch(wasm32)
+@_extern(wasm, module: "BridgeJSRuntimeTests", name: "bjs_UntypedThrowsValidator_validate")
+fileprivate func bjs_UntypedThrowsValidator_validate_extern(_ jsObject: Int32, _ value: Int32) -> Int32
+#else
+fileprivate func bjs_UntypedThrowsValidator_validate_extern(_ jsObject: Int32, _ value: Int32) -> Int32 {
+    fatalError("Only available on WebAssembly")
+}
+#endif
+@inline(never) fileprivate func bjs_UntypedThrowsValidator_validate(_ jsObject: Int32, _ value: Int32) -> Int32 {
+    return bjs_UntypedThrowsValidator_validate_extern(jsObject, value)
+}
+
+#if arch(wasm32)
+@_extern(wasm, module: "BridgeJSRuntimeTests", name: "bjs_UntypedThrowsValidator_loadLabel")
+fileprivate func bjs_UntypedThrowsValidator_loadLabel_extern(_ resolveRef: Int32, _ rejectRef: Int32, _ jsObject: Int32, _ keyWord0: Int32, _ keyWord1: Int32, _ keyWord2: Int32) -> Void
+#else
+fileprivate func bjs_UntypedThrowsValidator_loadLabel_extern(_ resolveRef: Int32, _ rejectRef: Int32, _ jsObject: Int32, _ keyWord0: Int32, _ keyWord1: Int32, _ keyWord2: Int32) -> Void {
+    fatalError("Only available on WebAssembly")
+}
+#endif
+@inline(never) fileprivate func bjs_UntypedThrowsValidator_loadLabel(_ resolveRef: Int32, _ rejectRef: Int32, _ jsObject: Int32, _ keyWord0: Int32, _ keyWord1: Int32, _ keyWord2: Int32) -> Void {
+    return bjs_UntypedThrowsValidator_loadLabel_extern(resolveRef, rejectRef, jsObject, keyWord0, keyWord1, keyWord2)
 }
 
 extension GenericRTPosition where Self: _BridgedSwiftProtocolWrapper {
@@ -9794,16 +9849,7 @@ public func _bjs_ArrayMembers_requireValues() -> Void {
         let ret = try _self.requireValues(_: values)
         ret.bridgeJSStackPush()
     } catch let error {
-        if let error = error.thrownValue.object {
-            withExtendedLifetime(error) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        } else {
-            let jsError = JSError(message: error.description)
-            withExtendedLifetime(jsError.jsObject) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        }
+        error.bridgeJSLowerThrow()
         return
     }
     #else
@@ -9905,16 +9951,7 @@ public func _bjs_validatePolygon(_ polygon: UnsafeMutableRawPointer) -> UnsafeMu
         let ret = try validatePolygon(_: polygon)
         return ret.bridgeJSLowerReturn()
     } catch let error {
-        if let error = error.thrownValue.object {
-            withExtendedLifetime(error) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        } else {
-            let jsError = JSError(message: error.description)
-            withExtendedLifetime(jsError.jsObject) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        }
+        error.bridgeJSLowerThrow()
         return UnsafeMutableRawPointer(bitPattern: -1).unsafelyUnwrapped
     }
     #else
@@ -10118,8 +10155,15 @@ public func _bjs_roundTripOptionalBoxed(_ boxedIsSome: Int32, _ boxedKind: Int32
 public func _bjs_awaitAsyncCallback(_ fetch: Int32) -> Int32 {
     #if arch(wasm32)
     let fetch = _BJS_Closure_20BridgeJSRuntimeTestsYaKSS_SS.bridgeJSLift(fetch)
+    func __bjs_body() async throws(JSException) -> String {
+        do {
+            return try await awaitAsyncCallback(_: fetch)
+        } catch let error {
+            throw error.bridgeJSAsJSException()
+        }
+    }
     return _bjs_makePromise(resolve: Promise_resolve_SS, reject: Promise_reject) { () async throws(JSException) -> String in
-        return try await awaitAsyncCallback(_: fetch)
+        return try await __bjs_body()
     }
     #else
     fatalError("Only available on WebAssembly")
@@ -10186,8 +10230,15 @@ public func _bjs_makeAsyncPayloadLoader() -> Int32 {
 public func _bjs_awaitPayloadCallback(_ load: Int32) -> Int32 {
     #if arch(wasm32)
     let load = _BJS_Closure_20BridgeJSRuntimeTestsYaKSb_18AsyncPayloadResultO.bridgeJSLift(load)
+    func __bjs_body() async throws(JSException) -> String {
+        do {
+            return try await awaitPayloadCallback(_: load)
+        } catch let error {
+            throw error.bridgeJSAsJSException()
+        }
+    }
     return _bjs_makePromise(resolve: Promise_resolve_SS, reject: Promise_reject) { () async throws(JSException) -> String in
-        return try await awaitPayloadCallback(_: load)
+        return try await __bjs_body()
     }
     #else
     fatalError("Only available on WebAssembly")
@@ -10249,16 +10300,7 @@ public func _bjs_runValidator(_ validate: Int32) -> Int32 {
         let ret = try runValidator(_: validate)
         return ret.bridgeJSLowerReturn()
     } catch let error {
-        if let error = error.thrownValue.object {
-            withExtendedLifetime(error) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        } else {
-            let jsError = JSError(message: error.description)
-            withExtendedLifetime(jsError.jsObject) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        }
+        error.bridgeJSLowerThrow()
         return 0
     }
     #else
@@ -10477,16 +10519,7 @@ public func _bjs_makeImportedFoo(_ valueBytes: Int32, _ valueLength: Int32) -> I
         let ret = try makeImportedFoo(value: value)
         return ret.bridgeJSLowerReturn()
     } catch let error {
-        if let error = error.thrownValue.object {
-            withExtendedLifetime(error) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        } else {
-            let jsError = JSError(message: error.description)
-            withExtendedLifetime(jsError.jsObject) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        }
+        error.bridgeJSLowerThrow()
         return 0
     }
     #else
@@ -10506,6 +10539,21 @@ public func _bjs_roundTripOptionalImportedClass(_ vIsSome: Int32, _ vValue: Int3
     #endif
 }
 
+@_expose(wasm, "bjs_throwsStringError")
+@_cdecl("bjs_throwsStringError")
+public func _bjs_throwsStringError() -> Void {
+    #if arch(wasm32)
+    do {
+        try throwsStringError()
+    } catch let error {
+        error.bridgeJSLowerThrow()
+        return
+    }
+    #else
+    fatalError("Only available on WebAssembly")
+    #endif
+}
+
 @_expose(wasm, "bjs_throwsSwiftError")
 @_cdecl("bjs_throwsSwiftError")
 public func _bjs_throwsSwiftError(_ shouldThrow: Int32) -> Void {
@@ -10514,16 +10562,7 @@ public func _bjs_throwsSwiftError(_ shouldThrow: Int32) -> Void {
     do {
         try throwsSwiftError(shouldThrow: shouldThrow)
     } catch let error {
-        if let error = error.thrownValue.object {
-            withExtendedLifetime(error) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        } else {
-            let jsError = JSError(message: error.description)
-            withExtendedLifetime(jsError.jsObject) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        }
+        error.bridgeJSLowerThrow()
         return
     }
     #else
@@ -10539,16 +10578,7 @@ public func _bjs_throwsWithIntResult() -> Int32 {
         let ret = try throwsWithIntResult()
         return ret.bridgeJSLowerReturn()
     } catch let error {
-        if let error = error.thrownValue.object {
-            withExtendedLifetime(error) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        } else {
-            let jsError = JSError(message: error.description)
-            withExtendedLifetime(jsError.jsObject) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        }
+        error.bridgeJSLowerThrow()
         return 0
     }
     #else
@@ -10564,16 +10594,7 @@ public func _bjs_throwsWithStringResult() -> Void {
         let ret = try throwsWithStringResult()
         return ret.bridgeJSLowerReturn()
     } catch let error {
-        if let error = error.thrownValue.object {
-            withExtendedLifetime(error) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        } else {
-            let jsError = JSError(message: error.description)
-            withExtendedLifetime(jsError.jsObject) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        }
+        error.bridgeJSLowerThrow()
         return
     }
     #else
@@ -10589,16 +10610,7 @@ public func _bjs_throwsWithBoolResult() -> Int32 {
         let ret = try throwsWithBoolResult()
         return ret.bridgeJSLowerReturn()
     } catch let error {
-        if let error = error.thrownValue.object {
-            withExtendedLifetime(error) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        } else {
-            let jsError = JSError(message: error.description)
-            withExtendedLifetime(jsError.jsObject) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        }
+        error.bridgeJSLowerThrow()
         return 0
     }
     #else
@@ -10614,16 +10626,7 @@ public func _bjs_throwsWithFloatResult() -> Float32 {
         let ret = try throwsWithFloatResult()
         return ret.bridgeJSLowerReturn()
     } catch let error {
-        if let error = error.thrownValue.object {
-            withExtendedLifetime(error) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        } else {
-            let jsError = JSError(message: error.description)
-            withExtendedLifetime(jsError.jsObject) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        }
+        error.bridgeJSLowerThrow()
         return 0.0
     }
     #else
@@ -10639,16 +10642,7 @@ public func _bjs_throwsWithDoubleResult() -> Float64 {
         let ret = try throwsWithDoubleResult()
         return ret.bridgeJSLowerReturn()
     } catch let error {
-        if let error = error.thrownValue.object {
-            withExtendedLifetime(error) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        } else {
-            let jsError = JSError(message: error.description)
-            withExtendedLifetime(jsError.jsObject) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        }
+        error.bridgeJSLowerThrow()
         return 0.0
     }
     #else
@@ -10664,16 +10658,7 @@ public func _bjs_throwsWithSwiftHeapObjectResult() -> UnsafeMutableRawPointer {
         let ret = try throwsWithSwiftHeapObjectResult()
         return ret.bridgeJSLowerReturn()
     } catch let error {
-        if let error = error.thrownValue.object {
-            withExtendedLifetime(error) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        } else {
-            let jsError = JSError(message: error.description)
-            withExtendedLifetime(jsError.jsObject) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        }
+        error.bridgeJSLowerThrow()
         return UnsafeMutableRawPointer(bitPattern: -1).unsafelyUnwrapped
     }
     #else
@@ -10689,16 +10674,7 @@ public func _bjs_throwsWithJSObjectResult() -> Int32 {
         let ret = try throwsWithJSObjectResult()
         return ret.bridgeJSLowerReturn()
     } catch let error {
-        if let error = error.thrownValue.object {
-            withExtendedLifetime(error) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        } else {
-            let jsError = JSError(message: error.description)
-            withExtendedLifetime(jsError.jsObject) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        }
+        error.bridgeJSLowerThrow()
         return 0
     }
     #else
@@ -10710,10 +10686,58 @@ public func _bjs_throwsWithJSObjectResult() -> Int32 {
 @_cdecl("bjs_zeroArgAsyncThrows")
 public func _bjs_zeroArgAsyncThrows() -> Int32 {
     #if arch(wasm32)
+    func __bjs_body() async throws(JSException) -> String {
+        do {
+            return try await zeroArgAsyncThrows()
+        } catch let error {
+            throw error.bridgeJSAsJSException()
+        }
+    }
     let __bjs_capture = 0
     return _bjs_makePromise(resolve: Promise_resolve_SS, reject: Promise_reject) { [__bjs_capture] () async throws(JSException) -> String in
         _ = __bjs_capture
-        return try await zeroArgAsyncThrows()
+        return try await __bjs_body()
+    }
+    #else
+    fatalError("Only available on WebAssembly")
+    #endif
+}
+
+@_expose(wasm, "bjs_zeroArgAsyncThrowsStringError")
+@_cdecl("bjs_zeroArgAsyncThrowsStringError")
+public func _bjs_zeroArgAsyncThrowsStringError() -> Int32 {
+    #if arch(wasm32)
+    func __bjs_body() async throws(JSException) -> Void {
+        do {
+            try await zeroArgAsyncThrowsStringError()
+        } catch let error {
+            throw error.bridgeJSAsJSException()
+        }
+    }
+    let __bjs_capture = 0
+    return _bjs_makePromise(resolve: Promise_resolve_y, reject: Promise_reject) { [__bjs_capture] () async throws(JSException) -> Void in
+        _ = __bjs_capture
+        try await __bjs_body()
+    }
+    #else
+    fatalError("Only available on WebAssembly")
+    #endif
+}
+
+@_expose(wasm, "bjs_asyncThrowsStringError")
+@_cdecl("bjs_asyncThrowsStringError")
+public func _bjs_asyncThrowsStringError(_ shouldThrow: Int32) -> Int32 {
+    #if arch(wasm32)
+    let shouldThrow = Bool.bridgeJSLiftParameter(shouldThrow)
+    func __bjs_body() async throws(JSException) -> Int {
+        do {
+            return try await asyncThrowsStringError(shouldThrow: shouldThrow)
+        } catch let error {
+            throw error.bridgeJSAsJSException()
+        }
+    }
+    return _bjs_makePromise(resolve: Promise_resolve_Si, reject: Promise_reject) { () async throws(JSException) -> Int in
+        return try await __bjs_body()
     }
     #else
     fatalError("Only available on WebAssembly")
@@ -11920,8 +11944,15 @@ public func _bjs_asyncRoundTripPublicPoint() -> Int32 {
 public func _bjs_asyncRoundTripPublicPointThrows() -> Int32 {
     #if arch(wasm32)
     let point = PublicPoint.bridgeJSLiftParameter()
+    func __bjs_body() async throws(JSException) -> PublicPoint {
+        do {
+            return try await asyncRoundTripPublicPointThrows(_: point)
+        } catch let error {
+            throw error.bridgeJSAsJSException()
+        }
+    }
     return _bjs_makePromise(resolve: Promise_resolve_11PublicPointV, reject: Promise_reject) { () async throws(JSException) -> PublicPoint in
-        return try await asyncRoundTripPublicPointThrows(_: point)
+        return try await __bjs_body()
     }
     #else
     fatalError("Only available on WebAssembly")
@@ -11933,8 +11964,15 @@ public func _bjs_asyncRoundTripPublicPointThrows() -> Int32 {
 public func _bjs_asyncStructOrThrow(_ shouldThrow: Int32) -> Int32 {
     #if arch(wasm32)
     let shouldThrow = Bool.bridgeJSLiftParameter(shouldThrow)
+    func __bjs_body() async throws(JSException) -> PublicPoint {
+        do {
+            return try await asyncStructOrThrow(_: shouldThrow)
+        } catch let error {
+            throw error.bridgeJSAsJSException()
+        }
+    }
     return _bjs_makePromise(resolve: Promise_resolve_11PublicPointV, reject: Promise_reject) { () async throws(JSException) -> PublicPoint in
-        return try await asyncStructOrThrow(_: shouldThrow)
+        return try await __bjs_body()
     }
     #else
     fatalError("Only available on WebAssembly")
@@ -14506,16 +14544,7 @@ public func _bjs_DataProcessorManager_validateProcessorValue(_ _self: UnsafeMuta
         let ret = try _self.validateProcessorValue(_: value)
         return ret.bridgeJSLowerReturn()
     } catch let error {
-        if let error = error.thrownValue.object {
-            withExtendedLifetime(error) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        } else {
-            let jsError = JSError(message: error.description)
-            withExtendedLifetime(jsError.jsObject) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        }
+        error.bridgeJSLowerThrow()
         return 0
     }
     #else
@@ -14529,8 +14558,15 @@ public func _bjs_DataProcessorManager_loadProcessorLabel(_ _self: UnsafeMutableR
     #if arch(wasm32)
     let key = String.bridgeJSLiftParameter(keyBytes, keyLength)
     let _self = DataProcessorManager.bridgeJSLiftParameter(_self)
+    func __bjs_body() async throws(JSException) -> String {
+        do {
+            return try await _self.loadProcessorLabel(_: key)
+        } catch let error {
+            throw error.bridgeJSAsJSException()
+        }
+    }
     return _bjs_makePromise(resolve: Promise_resolve_SS, reject: Promise_reject) { () async throws(JSException) -> String in
-        return try await _self.loadProcessorLabel(_: key)
+        return try await __bjs_body()
     }
     #else
     fatalError("Only available on WebAssembly")
@@ -14542,8 +14578,15 @@ public func _bjs_DataProcessorManager_loadProcessorLabel(_ _self: UnsafeMutableR
 public func _bjs_DataProcessorManager_resetProcessor(_ _self: UnsafeMutableRawPointer) -> Int32 {
     #if arch(wasm32)
     let _self = DataProcessorManager.bridgeJSLiftParameter(_self)
+    func __bjs_body() async throws(JSException) -> Void {
+        do {
+            try await _self.resetProcessor()
+        } catch let error {
+            throw error.bridgeJSAsJSException()
+        }
+    }
     return _bjs_makePromise(resolve: Promise_resolve_y, reject: Promise_reject) { () async throws(JSException) -> Void in
-        try await _self.resetProcessor()
+        try await __bjs_body()
     }
     #else
     fatalError("Only available on WebAssembly")
@@ -14802,16 +14845,7 @@ public func _bjs_SwiftDataProcessor_validate(_ _self: UnsafeMutableRawPointer, _
         let ret = try _self.validate(_: value)
         return ret.bridgeJSLowerReturn()
     } catch let error {
-        if let error = error.thrownValue.object {
-            withExtendedLifetime(error) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        } else {
-            let jsError = JSError(message: error.description)
-            withExtendedLifetime(jsError.jsObject) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        }
+        error.bridgeJSLowerThrow()
         return 0
     }
     #else
@@ -14825,8 +14859,15 @@ public func _bjs_SwiftDataProcessor_loadLabel(_ _self: UnsafeMutableRawPointer, 
     #if arch(wasm32)
     let key = String.bridgeJSLiftParameter(keyBytes, keyLength)
     let _self = SwiftDataProcessor.bridgeJSLiftParameter(_self)
+    func __bjs_body() async throws(JSException) -> String {
+        do {
+            return try await _self.loadLabel(_: key)
+        } catch let error {
+            throw error.bridgeJSAsJSException()
+        }
+    }
     return _bjs_makePromise(resolve: Promise_resolve_SS, reject: Promise_reject) { () async throws(JSException) -> String in
-        return try await _self.loadLabel(_: key)
+        return try await __bjs_body()
     }
     #else
     fatalError("Only available on WebAssembly")
@@ -14838,8 +14879,15 @@ public func _bjs_SwiftDataProcessor_loadLabel(_ _self: UnsafeMutableRawPointer, 
 public func _bjs_SwiftDataProcessor_reset(_ _self: UnsafeMutableRawPointer) -> Int32 {
     #if arch(wasm32)
     let _self = SwiftDataProcessor.bridgeJSLiftParameter(_self)
+    func __bjs_body() async throws(JSException) -> Void {
+        do {
+            try await _self.reset()
+        } catch let error {
+            throw error.bridgeJSAsJSException()
+        }
+    }
     return _bjs_makePromise(resolve: Promise_resolve_y, reject: Promise_reject) { () async throws(JSException) -> Void in
-        try await _self.reset()
+        try await __bjs_body()
     }
     #else
     fatalError("Only available on WebAssembly")
@@ -15116,6 +15164,88 @@ fileprivate func _bjs_SwiftDataProcessor_wrap_extern(_ pointer: UnsafeMutableRaw
 #endif
 @inline(never) fileprivate func _bjs_SwiftDataProcessor_wrap(_ pointer: UnsafeMutableRawPointer) -> Int32 {
     return _bjs_SwiftDataProcessor_wrap_extern(pointer)
+}
+
+@_expose(wasm, "bjs_UntypedThrowsValidatorManager_init")
+@_cdecl("bjs_UntypedThrowsValidatorManager_init")
+public func _bjs_UntypedThrowsValidatorManager_init(_ validator: Int32) -> UnsafeMutableRawPointer {
+    #if arch(wasm32)
+    let validator = AnyUntypedThrowsValidator.bridgeJSLiftParameter(validator)
+    let ret = UntypedThrowsValidatorManager(validator: validator)
+    return ret.bridgeJSLowerReturn()
+    #else
+    fatalError("Only available on WebAssembly")
+    #endif
+}
+
+@_expose(wasm, "bjs_UntypedThrowsValidatorManager_validate")
+@_cdecl("bjs_UntypedThrowsValidatorManager_validate")
+public func _bjs_UntypedThrowsValidatorManager_validate(_ _self: UnsafeMutableRawPointer, _ value: Int32) -> Int32 {
+    #if arch(wasm32)
+    let value = Int.bridgeJSLiftParameter(value)
+    let _self = UntypedThrowsValidatorManager.bridgeJSLiftParameter(_self)
+    do {
+        let ret = try _self.validate(_: value)
+        return ret.bridgeJSLowerReturn()
+    } catch let error {
+        error.bridgeJSLowerThrow()
+        return 0
+    }
+    #else
+    fatalError("Only available on WebAssembly")
+    #endif
+}
+
+@_expose(wasm, "bjs_UntypedThrowsValidatorManager_loadLabel")
+@_cdecl("bjs_UntypedThrowsValidatorManager_loadLabel")
+public func _bjs_UntypedThrowsValidatorManager_loadLabel(_ _self: UnsafeMutableRawPointer, _ keyBytes: Int32, _ keyLength: Int32) -> Int32 {
+    #if arch(wasm32)
+    let key = String.bridgeJSLiftParameter(keyBytes, keyLength)
+    let _self = UntypedThrowsValidatorManager.bridgeJSLiftParameter(_self)
+    func __bjs_body() async throws(JSException) -> String {
+        do {
+            return try await _self.loadLabel(_: key)
+        } catch let error {
+            throw error.bridgeJSAsJSException()
+        }
+    }
+    return _bjs_makePromise(resolve: Promise_resolve_SS, reject: Promise_reject) { () async throws(JSException) -> String in
+        return try await __bjs_body()
+    }
+    #else
+    fatalError("Only available on WebAssembly")
+    #endif
+}
+
+@_expose(wasm, "bjs_UntypedThrowsValidatorManager_deinit")
+@_cdecl("bjs_UntypedThrowsValidatorManager_deinit")
+public func _bjs_UntypedThrowsValidatorManager_deinit(_ pointer: UnsafeMutableRawPointer) -> Void {
+    #if arch(wasm32)
+    Unmanaged<UntypedThrowsValidatorManager>.fromOpaque(pointer).release()
+    #else
+    fatalError("Only available on WebAssembly")
+    #endif
+}
+
+extension UntypedThrowsValidatorManager: ConvertibleToJSValue, _BridgedSwiftHeapObject, _BridgedSwiftProtocolExportable {
+    var jsValue: JSValue {
+        return .object(JSObject(id: UInt32(bitPattern: _bjs_UntypedThrowsValidatorManager_wrap(Unmanaged.passRetained(self).toOpaque()))))
+    }
+    consuming func bridgeJSLowerAsProtocolReturn() -> Int32 {
+        _bjs_UntypedThrowsValidatorManager_wrap(Unmanaged.passRetained(self).toOpaque())
+    }
+}
+
+#if arch(wasm32)
+@_extern(wasm, module: "BridgeJSRuntimeTests", name: "bjs_UntypedThrowsValidatorManager_wrap")
+fileprivate func _bjs_UntypedThrowsValidatorManager_wrap_extern(_ pointer: UnsafeMutableRawPointer) -> Int32
+#else
+fileprivate func _bjs_UntypedThrowsValidatorManager_wrap_extern(_ pointer: UnsafeMutableRawPointer) -> Int32 {
+    fatalError("Only available on WebAssembly")
+}
+#endif
+@inline(never) fileprivate func _bjs_UntypedThrowsValidatorManager_wrap(_ pointer: UnsafeMutableRawPointer) -> Int32 {
+    return _bjs_UntypedThrowsValidatorManager_wrap_extern(pointer)
 }
 
 @_expose(wasm, "bjs_ProtocolReturnTests_static_createNativeProcessor")

@@ -422,6 +422,26 @@ public class ExportSwift {
             effects.isThrows && parameterBindings.isEmpty
         }
 
+        /// Converts any `ConvertibleToJSException` thrown by a throwing async body to the
+        /// `JSException` that `_bjs_makePromise` rejects with. The conversion lives in a local
+        /// function, which the closure calls, because a `catch` in a closure binds `any Error`
+        /// rather than the thrown type.
+        private func asyncThrowsBodyFunction(returnSpelling: String) -> CodeBlockItemSyntax {
+            """
+            func __bjs_body() async throws(JSException) -> \(raw: returnSpelling) {
+                do {
+                    \(CodeBlockItemListSyntax(self.body))
+                } catch let error {
+                    throw error.bridgeJSAsJSException()
+                }
+            }
+            """
+        }
+
+        private func asyncThrowsBodyFunctionCall(returnType: BridgeType) -> CodeBlockItemSyntax {
+            returnType == .void ? "try await __bjs_body()" : "return try await __bjs_body()"
+        }
+
         func render(abiName: String) -> DeclSyntax {
             var bindings = parameterBindings
             let body: CodeBlockItemListSyntax
@@ -433,6 +453,10 @@ public class ExportSwift {
                     forcesCapture: forcesCapture
                 )
                 var bodyItems = self.body
+                if effects.isThrows {
+                    bindings.append(asyncThrowsBodyFunction(returnSpelling: resolveType.swiftType))
+                    bodyItems = [asyncThrowsBodyFunctionCall(returnType: resolveType)]
+                }
                 if forcesCapture {
                     bindings.append("let __bjs_capture = 0")
                     if !bodyItems.isEmpty {
@@ -450,16 +474,7 @@ public class ExportSwift {
                     do {
                         \(CodeBlockItemListSyntax(self.body))
                     } catch let error {
-                        if let error = error.thrownValue.object {
-                            withExtendedLifetime(error) {
-                                _swift_js_throw(Int32(bitPattern: $0.id))
-                            }
-                        } else {
-                            let jsError = JSError(message: error.description)
-                            withExtendedLifetime(jsError.jsObject) {
-                                _swift_js_throw(Int32(bitPattern: $0.id))
-                            }
-                        }
+                        error.bridgeJSLowerThrow()
                         \(raw: returnPlaceholderStmt())
                     }
                     """

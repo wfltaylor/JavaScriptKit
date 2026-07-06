@@ -1080,6 +1080,25 @@ export async function createInstantiator(options, swift) {
                     reject(error);
                 }
             }
+            TestModule["bjs_MyViewControllerDelegate_check"] = function bjs_MyViewControllerDelegate_check(self, value) {
+                try {
+                    let ret = swift.memory.getObject(self).check(value);
+                    return ret;
+                } catch (error) {
+                    setException(error);
+                    return 0
+                }
+            }
+            TestModule["bjs_MyViewControllerDelegate_fetchLabel"] = function bjs_MyViewControllerDelegate_fetchLabel(resolveRef, rejectRef, self, keyWord0, keyWord1, keyWord2) {
+                const resolve = swift.memory.getObject(resolveRef);
+                const reject = swift.memory.getObject(rejectRef);
+                try {
+                    const string = decodeString(keyWord0, keyWord1, keyWord2);
+                    Promise.resolve(swift.memory.getObject(self).fetchLabel(string)).then(resolve, reject);
+                } catch (error) {
+                    reject(error);
+                }
+            }
         },
         setInstance: (i) => {
             if (memory !== i.exports.memory) immortalStrings.clear();

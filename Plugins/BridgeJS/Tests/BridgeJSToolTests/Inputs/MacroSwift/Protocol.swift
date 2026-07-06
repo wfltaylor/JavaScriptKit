@@ -63,6 +63,8 @@ import JavaScriptKit
     func loadLabel(_ key: String) async throws(JSException) -> String
     func reset() async throws(JSException)
     func fetchCount() async -> Int
+    func check(_ value: Int) throws -> Int
+    func fetchLabel(_ key: String) async throws -> String
 }
 
 @JS class MyViewController {

@@ -980,6 +980,62 @@
                 }
               }
             }
+          },
+          {
+            "abiName" : "bjs_MyViewControllerDelegate_check",
+            "effects" : {
+              "isAsync" : false,
+              "isStatic" : false,
+              "isThrows" : true
+            },
+            "name" : "check",
+            "parameters" : [
+              {
+                "label" : "_",
+                "name" : "value",
+                "type" : {
+                  "integer" : {
+                    "_0" : {
+                      "isSigned" : true,
+                      "width" : "word"
+                    }
+                  }
+                }
+              }
+            ],
+            "returnType" : {
+              "integer" : {
+                "_0" : {
+                  "isSigned" : true,
+                  "width" : "word"
+                }
+              }
+            }
+          },
+          {
+            "abiName" : "bjs_MyViewControllerDelegate_fetchLabel",
+            "effects" : {
+              "isAsync" : true,
+              "isStatic" : false,
+              "isThrows" : true
+            },
+            "name" : "fetchLabel",
+            "parameters" : [
+              {
+                "label" : "_",
+                "name" : "key",
+                "type" : {
+                  "string" : {
+
+                  }
+                }
+              }
+            ],
+            "returnType" : {
+              "string" : {
+
+              }
+            }
           }
         ],
         "name" : "MyViewControllerDelegate",

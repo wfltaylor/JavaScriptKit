@@ -81,6 +81,16 @@ export async function runAsyncWorksTests(exports) {
         (error) => error instanceof Error && error.message === "ZeroArgAsyncThrowsError"
     );
 
+    await assert.rejects(
+        () => exports.zeroArgAsyncThrowsStringError(),
+        (error) => error instanceof Error && error.message === "Async custom string error"
+    );
+    assert.equal(await exports.asyncThrowsStringError(false), 1);
+    await assert.rejects(
+        () => exports.asyncThrowsStringError(true),
+        (error) => error instanceof Error && error.message === "Async custom string error with argument"
+    );
+
     const richContact = {
         name: "Alice",
         age: 30,

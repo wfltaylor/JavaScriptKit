@@ -3662,6 +3662,90 @@
         "swiftCallName" : "SwiftDataProcessor"
       },
       {
+        "constructor" : {
+          "abiName" : "bjs_UntypedThrowsValidatorManager_init",
+          "effects" : {
+            "isAsync" : false,
+            "isStatic" : false,
+            "isThrows" : false
+          },
+          "parameters" : [
+            {
+              "label" : "validator",
+              "name" : "validator",
+              "type" : {
+                "swiftProtocol" : {
+                  "_0" : "UntypedThrowsValidator"
+                }
+              }
+            }
+          ]
+        },
+        "methods" : [
+          {
+            "abiName" : "bjs_UntypedThrowsValidatorManager_validate",
+            "effects" : {
+              "isAsync" : false,
+              "isStatic" : false,
+              "isThrows" : true
+            },
+            "name" : "validate",
+            "parameters" : [
+              {
+                "label" : "_",
+                "name" : "value",
+                "type" : {
+                  "integer" : {
+                    "_0" : {
+                      "isSigned" : true,
+                      "width" : "word"
+                    }
+                  }
+                }
+              }
+            ],
+            "returnType" : {
+              "integer" : {
+                "_0" : {
+                  "isSigned" : true,
+                  "width" : "word"
+                }
+              }
+            }
+          },
+          {
+            "abiName" : "bjs_UntypedThrowsValidatorManager_loadLabel",
+            "effects" : {
+              "isAsync" : true,
+              "isStatic" : false,
+              "isThrows" : true
+            },
+            "name" : "loadLabel",
+            "parameters" : [
+              {
+                "label" : "_",
+                "name" : "key",
+                "type" : {
+                  "string" : {
+
+                  }
+                }
+              }
+            ],
+            "returnType" : {
+              "string" : {
+
+              }
+            }
+          }
+        ],
+        "name" : "UntypedThrowsValidatorManager",
+        "properties" : [
+
+        ],
+        "swiftCallName" : "UntypedThrowsValidatorManager"
+      },
+      {
         "methods" : [
           {
             "abiName" : "bjs_ProtocolReturnTests_static_createNativeProcessor",
@@ -15659,6 +15743,23 @@
         }
       },
       {
+        "abiName" : "bjs_throwsStringError",
+        "effects" : {
+          "isAsync" : false,
+          "isStatic" : false,
+          "isThrows" : true
+        },
+        "name" : "throwsStringError",
+        "parameters" : [
+
+        ],
+        "returnType" : {
+          "void" : {
+
+          }
+        }
+      },
+      {
         "abiName" : "bjs_throwsSwiftError",
         "effects" : {
           "isAsync" : false,
@@ -15819,6 +15920,51 @@
         "returnType" : {
           "string" : {
 
+          }
+        }
+      },
+      {
+        "abiName" : "bjs_zeroArgAsyncThrowsStringError",
+        "effects" : {
+          "isAsync" : true,
+          "isStatic" : false,
+          "isThrows" : true
+        },
+        "name" : "zeroArgAsyncThrowsStringError",
+        "parameters" : [
+
+        ],
+        "returnType" : {
+          "void" : {
+
+          }
+        }
+      },
+      {
+        "abiName" : "bjs_asyncThrowsStringError",
+        "effects" : {
+          "isAsync" : true,
+          "isStatic" : false,
+          "isThrows" : true
+        },
+        "name" : "asyncThrowsStringError",
+        "parameters" : [
+          {
+            "label" : "shouldThrow",
+            "name" : "shouldThrow",
+            "type" : {
+              "bool" : {
+
+              }
+            }
+          }
+        ],
+        "returnType" : {
+          "integer" : {
+            "_0" : {
+              "isSigned" : true,
+              "width" : "word"
+            }
           }
         }
       },
@@ -19752,6 +19898,70 @@
               }
             }
           }
+        ]
+      },
+      {
+        "methods" : [
+          {
+            "abiName" : "bjs_UntypedThrowsValidator_validate",
+            "effects" : {
+              "isAsync" : false,
+              "isStatic" : false,
+              "isThrows" : true
+            },
+            "name" : "validate",
+            "parameters" : [
+              {
+                "label" : "_",
+                "name" : "value",
+                "type" : {
+                  "integer" : {
+                    "_0" : {
+                      "isSigned" : true,
+                      "width" : "word"
+                    }
+                  }
+                }
+              }
+            ],
+            "returnType" : {
+              "integer" : {
+                "_0" : {
+                  "isSigned" : true,
+                  "width" : "word"
+                }
+              }
+            }
+          },
+          {
+            "abiName" : "bjs_UntypedThrowsValidator_loadLabel",
+            "effects" : {
+              "isAsync" : true,
+              "isStatic" : false,
+              "isThrows" : true
+            },
+            "name" : "loadLabel",
+            "parameters" : [
+              {
+                "label" : "_",
+                "name" : "key",
+                "type" : {
+                  "string" : {
+
+                  }
+                }
+              }
+            ],
+            "returnType" : {
+              "string" : {
+
+              }
+            }
+          }
+        ],
+        "name" : "UntypedThrowsValidator",
+        "properties" : [
+
         ]
       },
       {

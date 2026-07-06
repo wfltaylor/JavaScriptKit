@@ -1840,24 +1840,38 @@ private final class ExportSwiftAPICollector: SyntaxAnyVisitor {
         let isAsync = signature.effectSpecifiers?.asyncSpecifier != nil
         var isThrows = false
         if let throwsClause: ThrowsClauseSyntax = signature.effectSpecifiers?.throwsClause {
-            // Limit the thrown type to JSException for now
-            guard let thrownType = throwsClause.type else {
+            // Require typed throws for now
+            guard throwsClause.type != nil else {
                 diagnose(
                     node: throwsClause,
-                    message: "Thrown type is not specified, only JSException is supported for now"
-                )
-                return nil
-            }
-            guard thrownType.trimmedDescription == "JSException" else {
-                diagnose(
-                    node: throwsClause,
-                    message: "Only JSException is supported for thrown type, got \(thrownType.trimmedDescription)"
+                    message:
+                        "Thrown type must be specified. Only JSException or any error conforming to ConvertibleToJSException is supported"
                 )
                 return nil
             }
             isThrows = true
         }
         return Effects(isAsync: isAsync, isThrows: isThrows, isStatic: isStatic)
+    }
+
+    /// Protocol methods are implemented in JavaScript, so they can only throw the `JSException`
+    /// that the generated wrapper throws, either as `throws(JSException)` or as untyped `throws`.
+    private func collectProtocolMethodEffects(signature: FunctionSignatureSyntax) -> Effects? {
+        let isAsync = signature.effectSpecifiers?.asyncSpecifier != nil
+        var isThrows = false
+        if let throwsClause: ThrowsClauseSyntax = signature.effectSpecifiers?.throwsClause {
+            if let thrownType = throwsClause.type, thrownType.trimmedDescription != "JSException" {
+                diagnose(
+                    node: throwsClause,
+                    message:
+                        "Only JSException or untyped throws is supported for thrown type of protocol methods, got \(thrownType.trimmedDescription)",
+                    hint: "Declare the method as `throws(JSException)` or `throws`"
+                )
+                return nil
+            }
+            isThrows = true
+        }
+        return Effects(isAsync: isAsync, isThrows: isThrows)
     }
 
     private func extractJSName(
@@ -2670,7 +2684,7 @@ private final class ExportSwiftAPICollector: SyntaxAnyVisitor {
             className: protocolName
         )
 
-        guard let effects = collectEffects(signature: node.signature) else {
+        guard let effects = collectProtocolMethodEffects(signature: node.signature) else {
             return nil
         }
 

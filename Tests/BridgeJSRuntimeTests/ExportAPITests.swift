@@ -83,6 +83,15 @@ struct TestError: Error {
     let message: String
 }
 
+struct StringError: ConvertibleToJSException {
+    let message: String
+    var jsException: JSException { JSException(message: message) }
+}
+
+@JS func throwsStringError() throws(StringError) {
+    throw StringError(message: "Custom string error")
+}
+
 @JS func throwsSwiftError(shouldThrow: Bool) throws(JSException) -> Void {
     if shouldThrow {
         throw JSException(JSError(message: "TestError").jsValue)
@@ -98,6 +107,17 @@ struct TestError: Error {
 
 @JS func zeroArgAsyncThrows() async throws(JSException) -> String {
     throw JSException(JSError(message: "ZeroArgAsyncThrowsError").jsValue)
+}
+
+@JS func zeroArgAsyncThrowsStringError() async throws(StringError) {
+    throw StringError(message: "Async custom string error")
+}
+
+@JS func asyncThrowsStringError(shouldThrow: Bool) async throws(StringError) -> Int {
+    if shouldThrow {
+        throw StringError(message: "Async custom string error with argument")
+    }
+    return 1
 }
 
 @JS func asyncRoundTripVoid() async -> Void { return }
@@ -1155,6 +1175,39 @@ enum GraphOperations {
 
     @JS func fetchCount() async -> Int {
         return count
+    }
+}
+
+@JS protocol UntypedThrowsValidator {
+    func validate(_ value: Int) throws -> Int
+    func loadLabel(_ key: String) async throws -> String
+}
+
+@JS class UntypedThrowsValidatorManager {
+    let validator: UntypedThrowsValidator
+
+    @JS init(validator: UntypedThrowsValidator) {
+        self.validator = validator
+    }
+
+    @JS func validate(_ value: Int) throws(JSException) -> Int {
+        do {
+            return try validator.validate(value)
+        } catch let error as JSException {
+            throw error
+        } catch {
+            throw JSException(message: "Unexpected error: \(error)")
+        }
+    }
+
+    @JS func loadLabel(_ key: String) async throws(JSException) -> String {
+        do {
+            return try await validator.loadLabel(key)
+        } catch let error as JSException {
+            throw error
+        } catch {
+            throw JSException(message: "Unexpected error: \(error)")
+        }
     }
 }
 

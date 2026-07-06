@@ -452,16 +452,7 @@ public func _invoke_swift_closure_TestModule_10TestModuleKSS_Sb(_ boxPtr: Unsafe
         let ret = try closure(param0)
         return ret.bridgeJSLowerReturn()
     } catch let error {
-        if let error = error.thrownValue.object {
-            withExtendedLifetime(error) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        } else {
-            let jsError = JSError(message: error.description)
-            withExtendedLifetime(jsError.jsObject) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        }
+        error.bridgeJSLowerThrow()
         return 0
     }
     #else
@@ -536,16 +527,7 @@ public func _invoke_swift_closure_TestModule_10TestModuleKSS_Si(_ boxPtr: Unsafe
         let ret = try closure(param0)
         return ret.bridgeJSLowerReturn()
     } catch let error {
-        if let error = error.thrownValue.object {
-            withExtendedLifetime(error) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        } else {
-            let jsError = JSError(message: error.description)
-            withExtendedLifetime(jsError.jsObject) {
-                _swift_js_throw(Int32(bitPattern: $0.id))
-            }
-        }
+        error.bridgeJSLowerThrow()
         return 0
     }
     #else
@@ -1646,8 +1628,15 @@ public func _invoke_swift_closure_TestModule_10TestModuleYaKSS_SS(_ boxPtr: Unsa
     #if arch(wasm32)
     let param0 = String.bridgeJSLiftParameter(param0Bytes, param0Length)
     let closure = Unmanaged<_BridgeJSTypedClosureBox<(String) async throws(JSException) -> String>>.fromOpaque(boxPtr).takeUnretainedValue().closure
+    func __bjs_body() async throws(JSException) -> String {
+        do {
+            return try await closure(param0)
+        } catch let error {
+            throw error.bridgeJSAsJSException()
+        }
+    }
     return _bjs_makePromise(resolve: Promise_resolve_SS, reject: Promise_reject) { () async throws(JSException) -> String in
-        return try await closure(param0)
+        return try await __bjs_body()
     }
     #else
     fatalError("Only available on WebAssembly")
@@ -1717,8 +1706,15 @@ public func _invoke_swift_closure_TestModule_10TestModuleYaKSb_9APIResultO(_ box
     #if arch(wasm32)
     let param0 = Bool.bridgeJSLiftParameter(param0)
     let closure = Unmanaged<_BridgeJSTypedClosureBox<(Bool) async throws(JSException) -> APIResult>>.fromOpaque(boxPtr).takeUnretainedValue().closure
+    func __bjs_body() async throws(JSException) -> APIResult {
+        do {
+            return try await closure(param0)
+        } catch let error {
+            throw error.bridgeJSAsJSException()
+        }
+    }
     return _bjs_makePromise(resolve: Promise_resolve_9APIResultO, reject: Promise_reject) { () async throws(JSException) -> APIResult in
-        return try await closure(param0)
+        return try await __bjs_body()
     }
     #else
     fatalError("Only available on WebAssembly")

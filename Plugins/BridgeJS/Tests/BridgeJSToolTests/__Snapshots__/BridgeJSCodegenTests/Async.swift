@@ -192,8 +192,15 @@ public func _bjs_asyncRoundTripStruct() -> Int32 {
 public func _bjs_asyncRoundTripStructThrows() -> Int32 {
     #if arch(wasm32)
     let v = AsyncPoint.bridgeJSLiftParameter()
+    func __bjs_body() async throws(JSException) -> AsyncPoint {
+        do {
+            return try await asyncRoundTripStructThrows(_: v)
+        } catch let error {
+            throw error.bridgeJSAsJSException()
+        }
+    }
     return _bjs_makePromise(resolve: Promise_resolve_10AsyncPointV, reject: Promise_reject) { () async throws(JSException) -> AsyncPoint in
-        return try await asyncRoundTripStructThrows(_: v)
+        return try await __bjs_body()
     }
     #else
     fatalError("Only available on WebAssembly")
@@ -204,10 +211,17 @@ public func _bjs_asyncRoundTripStructThrows() -> Int32 {
 @_cdecl("bjs_asyncThrowsZeroArg")
 public func _bjs_asyncThrowsZeroArg() -> Int32 {
     #if arch(wasm32)
+    func __bjs_body() async throws(JSException) -> String {
+        do {
+            return try await asyncThrowsZeroArg()
+        } catch let error {
+            throw error.bridgeJSAsJSException()
+        }
+    }
     let __bjs_capture = 0
     return _bjs_makePromise(resolve: Promise_resolve_SS, reject: Promise_reject) { [__bjs_capture] () async throws(JSException) -> String in
         _ = __bjs_capture
-        return try await asyncThrowsZeroArg()
+        return try await __bjs_body()
     }
     #else
     fatalError("Only available on WebAssembly")
