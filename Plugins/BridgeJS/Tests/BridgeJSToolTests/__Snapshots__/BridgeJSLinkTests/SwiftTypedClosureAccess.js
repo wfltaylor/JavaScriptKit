@@ -235,7 +235,7 @@ export async function createInstantiator(options, swift) {
                 const func = swift.memory.getObject(funcRef);
                 func.__unregister();
             }
-            bjs["invoke_js_callback_TestModule_10TestModule13JSPublicEventC_y"] = function(callbackId, param0) {
+            bjs["call_js_callback_TestModule_10TestModule13JSPublicEventC_y"] = function(callbackId, param0) {
                 try {
                     const callback = swift.memory.getObject(callbackId);
                     callback(swift.memory.getObject(param0));
@@ -255,7 +255,7 @@ export async function createInstantiator(options, swift) {
                 };
                 return makeClosure(boxPtr, file, line, lower_closure_TestModule_10TestModule13JSPublicEventC_y);
             }
-            bjs["invoke_js_callback_TestModule_10TestModule14JSPackageEventC_y"] = function(callbackId, param0) {
+            bjs["call_js_callback_TestModule_10TestModule14JSPackageEventC_y"] = function(callbackId, param0) {
                 try {
                     const callback = swift.memory.getObject(callbackId);
                     callback(swift.memory.getObject(param0));
@@ -275,7 +275,7 @@ export async function createInstantiator(options, swift) {
                 };
                 return makeClosure(boxPtr, file, line, lower_closure_TestModule_10TestModule14JSPackageEventC_y);
             }
-            bjs["invoke_js_callback_TestModule_10TestModule15JSInternalEventC_y"] = function(callbackId, param0) {
+            bjs["call_js_callback_TestModule_10TestModule15JSInternalEventC_y"] = function(callbackId, param0) {
                 try {
                     const callback = swift.memory.getObject(callbackId);
                     callback(swift.memory.getObject(param0));

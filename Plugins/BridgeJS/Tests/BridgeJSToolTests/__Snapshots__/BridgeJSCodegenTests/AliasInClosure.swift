@@ -1,13 +1,13 @@
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_TestModule_10TestModuleAl7Polygon_Si")
-fileprivate func invoke_js_callback_TestModule_10TestModuleAl7Polygon_Si_extern(_ callback: Int32, _ param0: UnsafeMutableRawPointer) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_TestModule_10TestModuleAl7Polygon_Si")
+fileprivate func call_js_callback_TestModule_10TestModuleAl7Polygon_Si_extern(_ callback: Int32, _ param0: UnsafeMutableRawPointer) -> Int32
 #else
-fileprivate func invoke_js_callback_TestModule_10TestModuleAl7Polygon_Si_extern(_ callback: Int32, _ param0: UnsafeMutableRawPointer) -> Int32 {
+fileprivate func call_js_callback_TestModule_10TestModuleAl7Polygon_Si_extern(_ callback: Int32, _ param0: UnsafeMutableRawPointer) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_TestModule_10TestModuleAl7Polygon_Si(_ callback: Int32, _ param0: UnsafeMutableRawPointer) -> Int32 {
-    return invoke_js_callback_TestModule_10TestModuleAl7Polygon_Si_extern(callback, param0)
+@inline(never) fileprivate func call_js_callback_TestModule_10TestModuleAl7Polygon_Si(_ callback: Int32, _ param0: UnsafeMutableRawPointer) -> Int32 {
+    return call_js_callback_TestModule_10TestModuleAl7Polygon_Si_extern(callback, param0)
 }
 
 #if arch(wasm32)
@@ -29,7 +29,7 @@ private enum _BJS_Closure_10TestModuleAl7Polygon_Si {
             #if arch(wasm32)
             let param0Pointer = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            let ret = invoke_js_callback_TestModule_10TestModuleAl7Polygon_Si(callbackValue, param0Pointer)
+            let ret = call_js_callback_TestModule_10TestModuleAl7Polygon_Si(callbackValue, param0Pointer)
             return Int.bridgeJSLiftReturn(ret)
             #else
             fatalError("Only available on WebAssembly")
@@ -63,15 +63,15 @@ public func _invoke_swift_closure_TestModule_10TestModuleAl7Polygon_Si(_ boxPtr:
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_TestModule_10TestModuley_Al7Polygon")
-fileprivate func invoke_js_callback_TestModule_10TestModuley_Al7Polygon_extern(_ callback: Int32) -> UnsafeMutableRawPointer
+@_extern(wasm, module: "bjs", name: "call_js_callback_TestModule_10TestModuley_Al7Polygon")
+fileprivate func call_js_callback_TestModule_10TestModuley_Al7Polygon_extern(_ callback: Int32) -> UnsafeMutableRawPointer
 #else
-fileprivate func invoke_js_callback_TestModule_10TestModuley_Al7Polygon_extern(_ callback: Int32) -> UnsafeMutableRawPointer {
+fileprivate func call_js_callback_TestModule_10TestModuley_Al7Polygon_extern(_ callback: Int32) -> UnsafeMutableRawPointer {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_TestModule_10TestModuley_Al7Polygon(_ callback: Int32) -> UnsafeMutableRawPointer {
-    return invoke_js_callback_TestModule_10TestModuley_Al7Polygon_extern(callback)
+@inline(never) fileprivate func call_js_callback_TestModule_10TestModuley_Al7Polygon(_ callback: Int32) -> UnsafeMutableRawPointer {
+    return call_js_callback_TestModule_10TestModuley_Al7Polygon_extern(callback)
 }
 
 #if arch(wasm32)
@@ -92,7 +92,7 @@ private enum _BJS_Closure_10TestModuley_Al7Polygon {
         return { [callback] in
             #if arch(wasm32)
             let callbackValue = callback.bridgeJSLowerParameter()
-            let ret = invoke_js_callback_TestModule_10TestModuley_Al7Polygon(callbackValue)
+            let ret = call_js_callback_TestModule_10TestModuley_Al7Polygon(callbackValue)
             return Polygon.bridgeJSLiftReturn(ret)
             #else
             fatalError("Only available on WebAssembly")

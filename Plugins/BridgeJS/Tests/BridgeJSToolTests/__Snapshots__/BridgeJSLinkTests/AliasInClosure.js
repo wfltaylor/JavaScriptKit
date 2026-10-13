@@ -236,7 +236,7 @@ export async function createInstantiator(options, swift) {
                 const func = swift.memory.getObject(funcRef);
                 func.__unregister();
             }
-            bjs["invoke_js_callback_TestModule_10TestModuleAl7Polygon_Si"] = function(callbackId, param0) {
+            bjs["call_js_callback_TestModule_10TestModuleAl7Polygon_Si"] = function(callbackId, param0) {
                 try {
                     const callback = swift.memory.getObject(callbackId);
                     let ret = callback(_exports['PolygonReference'].__construct(param0));
@@ -259,7 +259,7 @@ export async function createInstantiator(options, swift) {
                 };
                 return makeClosure(boxPtr, file, line, lower_closure_TestModule_10TestModuleAl7Polygon_Si);
             }
-            bjs["invoke_js_callback_TestModule_10TestModuley_Al7Polygon"] = function(callbackId) {
+            bjs["call_js_callback_TestModule_10TestModuley_Al7Polygon"] = function(callbackId) {
                 try {
                     const callback = swift.memory.getObject(callbackId);
                     let ret = callback();
