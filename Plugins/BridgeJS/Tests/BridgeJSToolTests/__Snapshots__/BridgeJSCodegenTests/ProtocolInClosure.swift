@@ -1,13 +1,13 @@
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_TestModule_10TestModule10RenderableP_10RenderableP")
-fileprivate func invoke_js_callback_TestModule_10TestModule10RenderableP_10RenderableP_extern(_ callback: Int32, _ param0: Int32) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_TestModule_10TestModule10RenderableP_10RenderableP")
+fileprivate func call_js_callback_TestModule_10TestModule10RenderableP_10RenderableP_extern(_ callback: Int32, _ param0: Int32) -> Int32
 #else
-fileprivate func invoke_js_callback_TestModule_10TestModule10RenderableP_10RenderableP_extern(_ callback: Int32, _ param0: Int32) -> Int32 {
+fileprivate func call_js_callback_TestModule_10TestModule10RenderableP_10RenderableP_extern(_ callback: Int32, _ param0: Int32) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_TestModule_10TestModule10RenderableP_10RenderableP(_ callback: Int32, _ param0: Int32) -> Int32 {
-    return invoke_js_callback_TestModule_10TestModule10RenderableP_10RenderableP_extern(callback, param0)
+@inline(never) fileprivate func call_js_callback_TestModule_10TestModule10RenderableP_10RenderableP(_ callback: Int32, _ param0: Int32) -> Int32 {
+    return call_js_callback_TestModule_10TestModule10RenderableP_10RenderableP_extern(callback, param0)
 }
 
 #if arch(wasm32)
@@ -29,7 +29,7 @@ private enum _BJS_Closure_10TestModule10RenderableP_10RenderableP {
             #if arch(wasm32)
             let param0ObjectId = _bridgeJSUnwrapProtocolExportable(param0, "Renderable").bridgeJSLowerAsProtocolReturn()
             let callbackValue = callback.bridgeJSLowerParameter()
-            let ret = invoke_js_callback_TestModule_10TestModule10RenderableP_10RenderableP(callbackValue, param0ObjectId)
+            let ret = call_js_callback_TestModule_10TestModule10RenderableP_10RenderableP(callbackValue, param0ObjectId)
             return AnyRenderable.bridgeJSLiftReturn(ret)
             #else
             fatalError("Only available on WebAssembly")
@@ -63,15 +63,15 @@ public func _invoke_swift_closure_TestModule_10TestModule10RenderableP_10Rendera
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_TestModule_10TestModule10RenderableP_SS")
-fileprivate func invoke_js_callback_TestModule_10TestModule10RenderableP_SS_extern(_ callback: Int32, _ param0: Int32) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_TestModule_10TestModule10RenderableP_SS")
+fileprivate func call_js_callback_TestModule_10TestModule10RenderableP_SS_extern(_ callback: Int32, _ param0: Int32) -> Int32
 #else
-fileprivate func invoke_js_callback_TestModule_10TestModule10RenderableP_SS_extern(_ callback: Int32, _ param0: Int32) -> Int32 {
+fileprivate func call_js_callback_TestModule_10TestModule10RenderableP_SS_extern(_ callback: Int32, _ param0: Int32) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_TestModule_10TestModule10RenderableP_SS(_ callback: Int32, _ param0: Int32) -> Int32 {
-    return invoke_js_callback_TestModule_10TestModule10RenderableP_SS_extern(callback, param0)
+@inline(never) fileprivate func call_js_callback_TestModule_10TestModule10RenderableP_SS(_ callback: Int32, _ param0: Int32) -> Int32 {
+    return call_js_callback_TestModule_10TestModule10RenderableP_SS_extern(callback, param0)
 }
 
 #if arch(wasm32)
@@ -93,7 +93,7 @@ private enum _BJS_Closure_10TestModule10RenderableP_SS {
             #if arch(wasm32)
             let param0ObjectId = _bridgeJSUnwrapProtocolExportable(param0, "Renderable").bridgeJSLowerAsProtocolReturn()
             let callbackValue = callback.bridgeJSLowerParameter()
-            let ret = invoke_js_callback_TestModule_10TestModule10RenderableP_SS(callbackValue, param0ObjectId)
+            let ret = call_js_callback_TestModule_10TestModule10RenderableP_SS(callbackValue, param0ObjectId)
             return String.bridgeJSLiftReturn(ret)
             #else
             fatalError("Only available on WebAssembly")
@@ -127,15 +127,15 @@ public func _invoke_swift_closure_TestModule_10TestModule10RenderableP_SS(_ boxP
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_TestModule_10TestModuleSq10RenderableP_SS")
-fileprivate func invoke_js_callback_TestModule_10TestModuleSq10RenderableP_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0ObjectId: Int32) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_TestModule_10TestModuleSq10RenderableP_SS")
+fileprivate func call_js_callback_TestModule_10TestModuleSq10RenderableP_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0ObjectId: Int32) -> Int32
 #else
-fileprivate func invoke_js_callback_TestModule_10TestModuleSq10RenderableP_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0ObjectId: Int32) -> Int32 {
+fileprivate func call_js_callback_TestModule_10TestModuleSq10RenderableP_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0ObjectId: Int32) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_TestModule_10TestModuleSq10RenderableP_SS(_ callback: Int32, _ param0IsSome: Int32, _ param0ObjectId: Int32) -> Int32 {
-    return invoke_js_callback_TestModule_10TestModuleSq10RenderableP_SS_extern(callback, param0IsSome, param0ObjectId)
+@inline(never) fileprivate func call_js_callback_TestModule_10TestModuleSq10RenderableP_SS(_ callback: Int32, _ param0IsSome: Int32, _ param0ObjectId: Int32) -> Int32 {
+    return call_js_callback_TestModule_10TestModuleSq10RenderableP_SS_extern(callback, param0IsSome, param0ObjectId)
 }
 
 #if arch(wasm32)
@@ -162,7 +162,7 @@ private enum _BJS_Closure_10TestModuleSq10RenderableP_SS {
                 (param0IsSome, param0ObjectId) = (0, 0)
             }
             let callbackValue = callback.bridgeJSLowerParameter()
-            let ret = invoke_js_callback_TestModule_10TestModuleSq10RenderableP_SS(callbackValue, param0IsSome, param0ObjectId)
+            let ret = call_js_callback_TestModule_10TestModuleSq10RenderableP_SS(callbackValue, param0IsSome, param0ObjectId)
             return String.bridgeJSLiftReturn(ret)
             #else
             fatalError("Only available on WebAssembly")
@@ -196,15 +196,15 @@ public func _invoke_swift_closure_TestModule_10TestModuleSq10RenderableP_SS(_ bo
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_TestModule_10TestModuley_10RenderableP")
-fileprivate func invoke_js_callback_TestModule_10TestModuley_10RenderableP_extern(_ callback: Int32) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_TestModule_10TestModuley_10RenderableP")
+fileprivate func call_js_callback_TestModule_10TestModuley_10RenderableP_extern(_ callback: Int32) -> Int32
 #else
-fileprivate func invoke_js_callback_TestModule_10TestModuley_10RenderableP_extern(_ callback: Int32) -> Int32 {
+fileprivate func call_js_callback_TestModule_10TestModuley_10RenderableP_extern(_ callback: Int32) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_TestModule_10TestModuley_10RenderableP(_ callback: Int32) -> Int32 {
-    return invoke_js_callback_TestModule_10TestModuley_10RenderableP_extern(callback)
+@inline(never) fileprivate func call_js_callback_TestModule_10TestModuley_10RenderableP(_ callback: Int32) -> Int32 {
+    return call_js_callback_TestModule_10TestModuley_10RenderableP_extern(callback)
 }
 
 #if arch(wasm32)
@@ -225,7 +225,7 @@ private enum _BJS_Closure_10TestModuley_10RenderableP {
         return { [callback] in
             #if arch(wasm32)
             let callbackValue = callback.bridgeJSLowerParameter()
-            let ret = invoke_js_callback_TestModule_10TestModuley_10RenderableP(callbackValue)
+            let ret = call_js_callback_TestModule_10TestModuley_10RenderableP(callbackValue)
             return AnyRenderable.bridgeJSLiftReturn(ret)
             #else
             fatalError("Only available on WebAssembly")

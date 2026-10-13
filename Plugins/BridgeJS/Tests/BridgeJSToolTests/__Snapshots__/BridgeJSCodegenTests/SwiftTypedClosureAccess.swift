@@ -1,13 +1,13 @@
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_TestModule_10TestModule13JSPublicEventC_y")
-fileprivate func invoke_js_callback_TestModule_10TestModule13JSPublicEventC_y_extern(_ callback: Int32, _ param0: Int32) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_TestModule_10TestModule13JSPublicEventC_y")
+fileprivate func call_js_callback_TestModule_10TestModule13JSPublicEventC_y_extern(_ callback: Int32, _ param0: Int32) -> Void
 #else
-fileprivate func invoke_js_callback_TestModule_10TestModule13JSPublicEventC_y_extern(_ callback: Int32, _ param0: Int32) -> Void {
+fileprivate func call_js_callback_TestModule_10TestModule13JSPublicEventC_y_extern(_ callback: Int32, _ param0: Int32) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_TestModule_10TestModule13JSPublicEventC_y(_ callback: Int32, _ param0: Int32) -> Void {
-    return invoke_js_callback_TestModule_10TestModule13JSPublicEventC_y_extern(callback, param0)
+@inline(never) fileprivate func call_js_callback_TestModule_10TestModule13JSPublicEventC_y(_ callback: Int32, _ param0: Int32) -> Void {
+    return call_js_callback_TestModule_10TestModule13JSPublicEventC_y_extern(callback, param0)
 }
 
 #if arch(wasm32)
@@ -29,7 +29,7 @@ private enum _BJS_Closure_10TestModule13JSPublicEventC_y {
             #if arch(wasm32)
             let param0Value = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            invoke_js_callback_TestModule_10TestModule13JSPublicEventC_y(callbackValue, param0Value)
+            call_js_callback_TestModule_10TestModule13JSPublicEventC_y(callbackValue, param0Value)
             #else
             fatalError("Only available on WebAssembly")
             #endif
@@ -61,15 +61,15 @@ public func _invoke_swift_closure_TestModule_10TestModule13JSPublicEventC_y(_ bo
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_TestModule_10TestModule14JSPackageEventC_y")
-fileprivate func invoke_js_callback_TestModule_10TestModule14JSPackageEventC_y_extern(_ callback: Int32, _ param0: Int32) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_TestModule_10TestModule14JSPackageEventC_y")
+fileprivate func call_js_callback_TestModule_10TestModule14JSPackageEventC_y_extern(_ callback: Int32, _ param0: Int32) -> Void
 #else
-fileprivate func invoke_js_callback_TestModule_10TestModule14JSPackageEventC_y_extern(_ callback: Int32, _ param0: Int32) -> Void {
+fileprivate func call_js_callback_TestModule_10TestModule14JSPackageEventC_y_extern(_ callback: Int32, _ param0: Int32) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_TestModule_10TestModule14JSPackageEventC_y(_ callback: Int32, _ param0: Int32) -> Void {
-    return invoke_js_callback_TestModule_10TestModule14JSPackageEventC_y_extern(callback, param0)
+@inline(never) fileprivate func call_js_callback_TestModule_10TestModule14JSPackageEventC_y(_ callback: Int32, _ param0: Int32) -> Void {
+    return call_js_callback_TestModule_10TestModule14JSPackageEventC_y_extern(callback, param0)
 }
 
 #if arch(wasm32)
@@ -91,7 +91,7 @@ private enum _BJS_Closure_10TestModule14JSPackageEventC_y {
             #if arch(wasm32)
             let param0Value = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            invoke_js_callback_TestModule_10TestModule14JSPackageEventC_y(callbackValue, param0Value)
+            call_js_callback_TestModule_10TestModule14JSPackageEventC_y(callbackValue, param0Value)
             #else
             fatalError("Only available on WebAssembly")
             #endif
@@ -123,15 +123,15 @@ public func _invoke_swift_closure_TestModule_10TestModule14JSPackageEventC_y(_ b
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_TestModule_10TestModule15JSInternalEventC_y")
-fileprivate func invoke_js_callback_TestModule_10TestModule15JSInternalEventC_y_extern(_ callback: Int32, _ param0: Int32) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_TestModule_10TestModule15JSInternalEventC_y")
+fileprivate func call_js_callback_TestModule_10TestModule15JSInternalEventC_y_extern(_ callback: Int32, _ param0: Int32) -> Void
 #else
-fileprivate func invoke_js_callback_TestModule_10TestModule15JSInternalEventC_y_extern(_ callback: Int32, _ param0: Int32) -> Void {
+fileprivate func call_js_callback_TestModule_10TestModule15JSInternalEventC_y_extern(_ callback: Int32, _ param0: Int32) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_TestModule_10TestModule15JSInternalEventC_y(_ callback: Int32, _ param0: Int32) -> Void {
-    return invoke_js_callback_TestModule_10TestModule15JSInternalEventC_y_extern(callback, param0)
+@inline(never) fileprivate func call_js_callback_TestModule_10TestModule15JSInternalEventC_y(_ callback: Int32, _ param0: Int32) -> Void {
+    return call_js_callback_TestModule_10TestModule15JSInternalEventC_y_extern(callback, param0)
 }
 
 #if arch(wasm32)
@@ -153,7 +153,7 @@ private enum _BJS_Closure_10TestModule15JSInternalEventC_y {
             #if arch(wasm32)
             let param0Value = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            invoke_js_callback_TestModule_10TestModule15JSInternalEventC_y(callbackValue, param0Value)
+            call_js_callback_TestModule_10TestModule15JSInternalEventC_y(callbackValue, param0Value)
             #else
             fatalError("Only available on WebAssembly")
             #endif

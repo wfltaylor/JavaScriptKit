@@ -341,7 +341,7 @@ export async function createInstantiator(options, swift) {
                 const func = swift.memory.getObject(funcRef);
                 func.__unregister();
             }
-            bjs["invoke_js_callback_TestModule_10TestModuleKSS_Sb"] = function(callbackId, param0Word0, param0Word1, param0Word2) {
+            bjs["call_js_callback_TestModule_10TestModuleKSS_Sb"] = function(callbackId, param0Word0, param0Word1, param0Word2) {
                 try {
                     const callback = swift.memory.getObject(callbackId);
                     const string = decodeString(param0Word0, param0Word1, param0Word2);
@@ -367,7 +367,7 @@ export async function createInstantiator(options, swift) {
                 };
                 return makeClosure(boxPtr, file, line, lower_closure_TestModule_10TestModuleKSS_Sb);
             }
-            bjs["invoke_js_callback_TestModule_10TestModuleSi_Si"] = function(callbackId, param0) {
+            bjs["call_js_callback_TestModule_10TestModuleSi_Si"] = function(callbackId, param0) {
                 try {
                     const callback = swift.memory.getObject(callbackId);
                     let ret = callback(param0);
@@ -390,7 +390,7 @@ export async function createInstantiator(options, swift) {
                 };
                 return makeClosure(boxPtr, file, line, lower_closure_TestModule_10TestModuleSi_Si);
             }
-            bjs["invoke_js_callback_TestModule_10TestModuleYaKSS_SS"] = function(resolveRef, rejectRef, callbackId, param0Word0, param0Word1, param0Word2) {
+            bjs["call_js_callback_TestModule_10TestModuleYaKSS_SS"] = function(resolveRef, rejectRef, callbackId, param0Word0, param0Word1, param0Word2) {
                 const resolve = swift.memory.getObject(resolveRef);
                 const reject = swift.memory.getObject(rejectRef);
                 try {
@@ -418,7 +418,7 @@ export async function createInstantiator(options, swift) {
                 };
                 return makeClosure(boxPtr, file, line, lower_closure_TestModule_10TestModuleYaKSS_SS);
             }
-            bjs["invoke_js_callback_TestModule_10TestModules7JSValueV_y"] = function(callbackId, param0Kind, param0Payload1, param0Payload2) {
+            bjs["call_js_callback_TestModule_10TestModules7JSValueV_y"] = function(callbackId, param0Kind, param0Payload1, param0Payload2) {
                 try {
                     const callback = swift.memory.getObject(callbackId);
                     const jsValue = __bjs_jsValueLift(param0Kind, param0Payload1, param0Payload2);
@@ -440,7 +440,7 @@ export async function createInstantiator(options, swift) {
                 };
                 return makeClosure(boxPtr, file, line, lower_closure_TestModule_10TestModules7JSValueV_y);
             }
-            bjs["invoke_js_callback_TestModule_10TestModulesSS_y"] = function(callbackId, param0Word0, param0Word1, param0Word2) {
+            bjs["call_js_callback_TestModule_10TestModulesSS_y"] = function(callbackId, param0Word0, param0Word1, param0Word2) {
                 try {
                     const callback = swift.memory.getObject(callbackId);
                     const string = decodeString(param0Word0, param0Word1, param0Word2);
