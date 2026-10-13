@@ -9,15 +9,15 @@
 @_spi(BridgeJS) import JavaScriptKit
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests10HttpStatusO_Si")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests10HttpStatusO_Si_extern(_ callback: Int32, _ param0: Int32) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests10HttpStatusO_Si")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests10HttpStatusO_Si_extern(_ callback: Int32, _ param0: Int32) -> Int32
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests10HttpStatusO_Si_extern(_ callback: Int32, _ param0: Int32) -> Int32 {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests10HttpStatusO_Si_extern(_ callback: Int32, _ param0: Int32) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests10HttpStatusO_Si(_ callback: Int32, _ param0: Int32) -> Int32 {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests10HttpStatusO_Si_extern(callback, param0)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests10HttpStatusO_Si(_ callback: Int32, _ param0: Int32) -> Int32 {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests10HttpStatusO_Si_extern(callback, param0)
 }
 
 #if arch(wasm32)
@@ -39,7 +39,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTests10HttpStatusO_Si {
             #if arch(wasm32)
             let param0Value = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests10HttpStatusO_Si(callbackValue, param0Value)
+            let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests10HttpStatusO_Si(callbackValue, param0Value)
             return Int.bridgeJSLiftReturn(ret)
             #else
             fatalError("Only available on WebAssembly")
@@ -73,15 +73,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTests10H
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests13DataProcessorP_13DataProcessorP")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests13DataProcessorP_13DataProcessorP_extern(_ callback: Int32, _ param0: Int32) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests13DataProcessorP_13DataProcessorP")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests13DataProcessorP_13DataProcessorP_extern(_ callback: Int32, _ param0: Int32) -> Int32
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests13DataProcessorP_13DataProcessorP_extern(_ callback: Int32, _ param0: Int32) -> Int32 {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests13DataProcessorP_13DataProcessorP_extern(_ callback: Int32, _ param0: Int32) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests13DataProcessorP_13DataProcessorP(_ callback: Int32, _ param0: Int32) -> Int32 {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests13DataProcessorP_13DataProcessorP_extern(callback, param0)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests13DataProcessorP_13DataProcessorP(_ callback: Int32, _ param0: Int32) -> Int32 {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests13DataProcessorP_13DataProcessorP_extern(callback, param0)
 }
 
 #if arch(wasm32)
@@ -103,7 +103,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTests13DataProcessorP_13DataProcessor
             #if arch(wasm32)
             let param0ObjectId = _bridgeJSUnwrapProtocolExportable(param0, "DataProcessor").bridgeJSLowerAsProtocolReturn()
             let callbackValue = callback.bridgeJSLowerParameter()
-            let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests13DataProcessorP_13DataProcessorP(callbackValue, param0ObjectId)
+            let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests13DataProcessorP_13DataProcessorP(callbackValue, param0ObjectId)
             return AnyDataProcessor.bridgeJSLiftReturn(ret)
             #else
             fatalError("Only available on WebAssembly")
@@ -137,15 +137,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTests13D
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests13DataProcessorP_SS")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests13DataProcessorP_SS_extern(_ callback: Int32, _ param0: Int32) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests13DataProcessorP_SS")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests13DataProcessorP_SS_extern(_ callback: Int32, _ param0: Int32) -> Int32
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests13DataProcessorP_SS_extern(_ callback: Int32, _ param0: Int32) -> Int32 {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests13DataProcessorP_SS_extern(_ callback: Int32, _ param0: Int32) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests13DataProcessorP_SS(_ callback: Int32, _ param0: Int32) -> Int32 {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests13DataProcessorP_SS_extern(callback, param0)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests13DataProcessorP_SS(_ callback: Int32, _ param0: Int32) -> Int32 {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests13DataProcessorP_SS_extern(callback, param0)
 }
 
 #if arch(wasm32)
@@ -167,7 +167,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTests13DataProcessorP_SS {
             #if arch(wasm32)
             let param0ObjectId = _bridgeJSUnwrapProtocolExportable(param0, "DataProcessor").bridgeJSLowerAsProtocolReturn()
             let callbackValue = callback.bridgeJSLowerParameter()
-            let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests13DataProcessorP_SS(callbackValue, param0ObjectId)
+            let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests13DataProcessorP_SS(callbackValue, param0ObjectId)
             return String.bridgeJSLiftReturn(ret)
             #else
             fatalError("Only available on WebAssembly")
@@ -201,15 +201,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTests13D
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests5ThemeO_SS")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests5ThemeO_SS_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests5ThemeO_SS")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests5ThemeO_SS_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests5ThemeO_SS_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32 {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests5ThemeO_SS_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests5ThemeO_SS(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32 {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests5ThemeO_SS_extern(callback, param0Word0, param0Word1, param0Word2)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests5ThemeO_SS(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32 {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests5ThemeO_SS_extern(callback, param0Word0, param0Word1, param0Word2)
 }
 
 #if arch(wasm32)
@@ -231,7 +231,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTests5ThemeO_SS {
             #if arch(wasm32)
             let ret0 = param0.bridgeJSWithLoweredParameter { (param0Word0, param0Word1, param0Word2) in
                 let callbackValue = callback.bridgeJSLowerParameter()
-                let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests5ThemeO_SS(callbackValue, param0Word0, param0Word1, param0Word2)
+                let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests5ThemeO_SS(callbackValue, param0Word0, param0Word1, param0Word2)
                 return ret
             }
             let ret = ret0
@@ -268,15 +268,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTests5Th
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests5ThemeO_Sb")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests5ThemeO_Sb_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests5ThemeO_Sb")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests5ThemeO_Sb_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests5ThemeO_Sb_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32 {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests5ThemeO_Sb_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests5ThemeO_Sb(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32 {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests5ThemeO_Sb_extern(callback, param0Word0, param0Word1, param0Word2)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests5ThemeO_Sb(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32 {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests5ThemeO_Sb_extern(callback, param0Word0, param0Word1, param0Word2)
 }
 
 #if arch(wasm32)
@@ -298,7 +298,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTests5ThemeO_Sb {
             #if arch(wasm32)
             let ret0 = param0.bridgeJSWithLoweredParameter { (param0Word0, param0Word1, param0Word2) in
                 let callbackValue = callback.bridgeJSLowerParameter()
-                let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests5ThemeO_Sb(callbackValue, param0Word0, param0Word1, param0Word2)
+                let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests5ThemeO_Sb(callbackValue, param0Word0, param0Word1, param0Word2)
                 return ret
             }
             let ret = ret0
@@ -335,15 +335,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTests5Th
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests7GreeterC_SS")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests7GreeterC_SS_extern(_ callback: Int32, _ param0: UnsafeMutableRawPointer) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests7GreeterC_SS")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests7GreeterC_SS_extern(_ callback: Int32, _ param0: UnsafeMutableRawPointer) -> Int32
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests7GreeterC_SS_extern(_ callback: Int32, _ param0: UnsafeMutableRawPointer) -> Int32 {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests7GreeterC_SS_extern(_ callback: Int32, _ param0: UnsafeMutableRawPointer) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests7GreeterC_SS(_ callback: Int32, _ param0: UnsafeMutableRawPointer) -> Int32 {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests7GreeterC_SS_extern(callback, param0)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests7GreeterC_SS(_ callback: Int32, _ param0: UnsafeMutableRawPointer) -> Int32 {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests7GreeterC_SS_extern(callback, param0)
 }
 
 #if arch(wasm32)
@@ -365,7 +365,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTests7GreeterC_SS {
             #if arch(wasm32)
             let param0Pointer = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests7GreeterC_SS(callbackValue, param0Pointer)
+            let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests7GreeterC_SS(callbackValue, param0Pointer)
             return String.bridgeJSLiftReturn(ret)
             #else
             fatalError("Only available on WebAssembly")
@@ -399,15 +399,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTests7Gr
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8JSObjectC_8JSObjectC")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8JSObjectC_8JSObjectC_extern(_ callback: Int32, _ param0: Int32) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8JSObjectC_8JSObjectC")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8JSObjectC_8JSObjectC_extern(_ callback: Int32, _ param0: Int32) -> Int32
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8JSObjectC_8JSObjectC_extern(_ callback: Int32, _ param0: Int32) -> Int32 {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8JSObjectC_8JSObjectC_extern(_ callback: Int32, _ param0: Int32) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8JSObjectC_8JSObjectC(_ callback: Int32, _ param0: Int32) -> Int32 {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8JSObjectC_8JSObjectC_extern(callback, param0)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8JSObjectC_8JSObjectC(_ callback: Int32, _ param0: Int32) -> Int32 {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8JSObjectC_8JSObjectC_extern(callback, param0)
 }
 
 #if arch(wasm32)
@@ -429,7 +429,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTests8JSObjectC_8JSObjectC {
             #if arch(wasm32)
             let param0Value = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8JSObjectC_8JSObjectC(callbackValue, param0Value)
+            let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8JSObjectC_8JSObjectC(callbackValue, param0Value)
             return JSObject.bridgeJSLiftReturn(ret)
             #else
             fatalError("Only available on WebAssembly")
@@ -463,15 +463,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8JS
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8Vector2DV_8Vector2DV")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8Vector2DV_8Vector2DV_extern(_ callback: Int32) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8Vector2DV_8Vector2DV")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8Vector2DV_8Vector2DV_extern(_ callback: Int32) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8Vector2DV_8Vector2DV_extern(_ callback: Int32) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8Vector2DV_8Vector2DV_extern(_ callback: Int32) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8Vector2DV_8Vector2DV(_ callback: Int32) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8Vector2DV_8Vector2DV_extern(callback)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8Vector2DV_8Vector2DV(_ callback: Int32) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8Vector2DV_8Vector2DV_extern(callback)
 }
 
 #if arch(wasm32)
@@ -493,7 +493,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTests8Vector2DV_8Vector2DV {
             #if arch(wasm32)
             let _ = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8Vector2DV_8Vector2DV(callbackValue)
+            call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8Vector2DV_8Vector2DV(callbackValue)
             return Vector2D.bridgeJSLiftReturn()
             #else
             fatalError("Only available on WebAssembly")
@@ -527,15 +527,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8Ve
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8Vector2DV_y")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8Vector2DV_y_extern(_ callback: Int32) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8Vector2DV_y")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8Vector2DV_y_extern(_ callback: Int32) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8Vector2DV_y_extern(_ callback: Int32) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8Vector2DV_y_extern(_ callback: Int32) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8Vector2DV_y(_ callback: Int32) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8Vector2DV_y_extern(callback)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8Vector2DV_y(_ callback: Int32) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8Vector2DV_y_extern(callback)
 }
 
 #if arch(wasm32)
@@ -557,7 +557,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTests8Vector2DV_y {
             #if arch(wasm32)
             let _ = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8Vector2DV_y(callbackValue)
+            call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8Vector2DV_y(callbackValue)
             #else
             fatalError("Only available on WebAssembly")
             #endif
@@ -589,15 +589,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTests8Ve
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9APIResultO_SS")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9APIResultO_SS_extern(_ callback: Int32, _ param0: Int32) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9APIResultO_SS")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9APIResultO_SS_extern(_ callback: Int32, _ param0: Int32) -> Int32
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9APIResultO_SS_extern(_ callback: Int32, _ param0: Int32) -> Int32 {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9APIResultO_SS_extern(_ callback: Int32, _ param0: Int32) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9APIResultO_SS(_ callback: Int32, _ param0: Int32) -> Int32 {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9APIResultO_SS_extern(callback, param0)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9APIResultO_SS(_ callback: Int32, _ param0: Int32) -> Int32 {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9APIResultO_SS_extern(callback, param0)
 }
 
 #if arch(wasm32)
@@ -619,7 +619,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTests9APIResultO_SS {
             #if arch(wasm32)
             let param0CaseId = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9APIResultO_SS(callbackValue, param0CaseId)
+            let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9APIResultO_SS(callbackValue, param0CaseId)
             return String.bridgeJSLiftReturn(ret)
             #else
             fatalError("Only available on WebAssembly")
@@ -653,15 +653,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9AP
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9DirectionO_SS")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9DirectionO_SS_extern(_ callback: Int32, _ param0: Int32) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9DirectionO_SS")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9DirectionO_SS_extern(_ callback: Int32, _ param0: Int32) -> Int32
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9DirectionO_SS_extern(_ callback: Int32, _ param0: Int32) -> Int32 {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9DirectionO_SS_extern(_ callback: Int32, _ param0: Int32) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9DirectionO_SS(_ callback: Int32, _ param0: Int32) -> Int32 {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9DirectionO_SS_extern(callback, param0)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9DirectionO_SS(_ callback: Int32, _ param0: Int32) -> Int32 {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9DirectionO_SS_extern(callback, param0)
 }
 
 #if arch(wasm32)
@@ -683,7 +683,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTests9DirectionO_SS {
             #if arch(wasm32)
             let param0Value = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9DirectionO_SS(callbackValue, param0Value)
+            let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9DirectionO_SS(callbackValue, param0Value)
             return String.bridgeJSLiftReturn(ret)
             #else
             fatalError("Only available on WebAssembly")
@@ -717,15 +717,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9Di
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9DirectionO_Sb")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9DirectionO_Sb_extern(_ callback: Int32, _ param0: Int32) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9DirectionO_Sb")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9DirectionO_Sb_extern(_ callback: Int32, _ param0: Int32) -> Int32
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9DirectionO_Sb_extern(_ callback: Int32, _ param0: Int32) -> Int32 {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9DirectionO_Sb_extern(_ callback: Int32, _ param0: Int32) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9DirectionO_Sb(_ callback: Int32, _ param0: Int32) -> Int32 {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9DirectionO_Sb_extern(callback, param0)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9DirectionO_Sb(_ callback: Int32, _ param0: Int32) -> Int32 {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9DirectionO_Sb_extern(callback, param0)
 }
 
 #if arch(wasm32)
@@ -747,7 +747,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTests9DirectionO_Sb {
             #if arch(wasm32)
             let param0Value = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9DirectionO_Sb(callbackValue, param0Value)
+            let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9DirectionO_Sb(callbackValue, param0Value)
             return Bool.bridgeJSLiftReturn(ret)
             #else
             fatalError("Only available on WebAssembly")
@@ -781,15 +781,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTests9Di
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsAl7Polygon_Si")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsAl7Polygon_Si_extern(_ callback: Int32, _ param0: UnsafeMutableRawPointer) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsAl7Polygon_Si")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsAl7Polygon_Si_extern(_ callback: Int32, _ param0: UnsafeMutableRawPointer) -> Int32
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsAl7Polygon_Si_extern(_ callback: Int32, _ param0: UnsafeMutableRawPointer) -> Int32 {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsAl7Polygon_Si_extern(_ callback: Int32, _ param0: UnsafeMutableRawPointer) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsAl7Polygon_Si(_ callback: Int32, _ param0: UnsafeMutableRawPointer) -> Int32 {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsAl7Polygon_Si_extern(callback, param0)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsAl7Polygon_Si(_ callback: Int32, _ param0: UnsafeMutableRawPointer) -> Int32 {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsAl7Polygon_Si_extern(callback, param0)
 }
 
 #if arch(wasm32)
@@ -811,7 +811,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsAl7Polygon_Si {
             #if arch(wasm32)
             let param0Pointer = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsAl7Polygon_Si(callbackValue, param0Pointer)
+            let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsAl7Polygon_Si(callbackValue, param0Pointer)
             return Int.bridgeJSLiftReturn(ret)
             #else
             fatalError("Only available on WebAssembly")
@@ -845,15 +845,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsAl7
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsKSS_Sb")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsKSS_Sb_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsKSS_Sb")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsKSS_Sb_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsKSS_Sb_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32 {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsKSS_Sb_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsKSS_Sb(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32 {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsKSS_Sb_extern(callback, param0Word0, param0Word1, param0Word2)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsKSS_Sb(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32 {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsKSS_Sb_extern(callback, param0Word0, param0Word1, param0Word2)
 }
 
 #if arch(wasm32)
@@ -875,7 +875,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsKSS_Sb {
             #if arch(wasm32)
             let ret0 = param0.bridgeJSWithLoweredParameter { (param0Word0, param0Word1, param0Word2) in
                 let callbackValue = callback.bridgeJSLowerParameter()
-                let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsKSS_Sb(callbackValue, param0Word0, param0Word1, param0Word2)
+                let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsKSS_Sb(callbackValue, param0Word0, param0Word1, param0Word2)
                 return ret
             }
             let ret = ret0
@@ -929,15 +929,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsKSS
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsKSS_Si")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsKSS_Si_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsKSS_Si")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsKSS_Si_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsKSS_Si_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32 {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsKSS_Si_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsKSS_Si(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32 {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsKSS_Si_extern(callback, param0Word0, param0Word1, param0Word2)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsKSS_Si(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32 {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsKSS_Si_extern(callback, param0Word0, param0Word1, param0Word2)
 }
 
 #if arch(wasm32)
@@ -959,7 +959,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsKSS_Si {
             #if arch(wasm32)
             let ret0 = param0.bridgeJSWithLoweredParameter { (param0Word0, param0Word1, param0Word2) in
                 let callbackValue = callback.bridgeJSLowerParameter()
-                let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsKSS_Si(callbackValue, param0Word0, param0Word1, param0Word2)
+                let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsKSS_Si(callbackValue, param0Word0, param0Word1, param0Word2)
                 return ret
             }
             let ret = ret0
@@ -1013,15 +1013,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsKSS
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSS_7GreeterC")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSS_7GreeterC_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> UnsafeMutableRawPointer
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSS_7GreeterC")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSS_7GreeterC_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> UnsafeMutableRawPointer
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSS_7GreeterC_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> UnsafeMutableRawPointer {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSS_7GreeterC_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> UnsafeMutableRawPointer {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSS_7GreeterC(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> UnsafeMutableRawPointer {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSS_7GreeterC_extern(callback, param0Word0, param0Word1, param0Word2)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSS_7GreeterC(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> UnsafeMutableRawPointer {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSS_7GreeterC_extern(callback, param0Word0, param0Word1, param0Word2)
 }
 
 #if arch(wasm32)
@@ -1043,7 +1043,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsSS_7GreeterC {
             #if arch(wasm32)
             let ret0 = param0.bridgeJSWithLoweredParameter { (param0Word0, param0Word1, param0Word2) in
                 let callbackValue = callback.bridgeJSLowerParameter()
-                let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSS_7GreeterC(callbackValue, param0Word0, param0Word1, param0Word2)
+                let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSS_7GreeterC(callbackValue, param0Word0, param0Word1, param0Word2)
                 return ret
             }
             let ret = ret0
@@ -1080,15 +1080,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSS_
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSS_SS")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSS_SS_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSS_SS")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSS_SS_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSS_SS_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32 {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSS_SS_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSS_SS(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32 {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSS_SS_extern(callback, param0Word0, param0Word1, param0Word2)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSS_SS(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32 {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSS_SS_extern(callback, param0Word0, param0Word1, param0Word2)
 }
 
 #if arch(wasm32)
@@ -1110,7 +1110,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsSS_SS {
             #if arch(wasm32)
             let ret0 = param0.bridgeJSWithLoweredParameter { (param0Word0, param0Word1, param0Word2) in
                 let callbackValue = callback.bridgeJSLowerParameter()
-                let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSS_SS(callbackValue, param0Word0, param0Word1, param0Word2)
+                let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSS_SS(callbackValue, param0Word0, param0Word1, param0Word2)
                 return ret
             }
             let ret = ret0
@@ -1147,15 +1147,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSS_
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSa7JSValueV_Sa7JSValueV")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSa7JSValueV_Sa7JSValueV_extern(_ callback: Int32) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSa7JSValueV_Sa7JSValueV")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSa7JSValueV_Sa7JSValueV_extern(_ callback: Int32) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSa7JSValueV_Sa7JSValueV_extern(_ callback: Int32) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSa7JSValueV_Sa7JSValueV_extern(_ callback: Int32) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSa7JSValueV_Sa7JSValueV(_ callback: Int32) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSa7JSValueV_Sa7JSValueV_extern(callback)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSa7JSValueV_Sa7JSValueV(_ callback: Int32) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSa7JSValueV_Sa7JSValueV_extern(callback)
 }
 
 #if arch(wasm32)
@@ -1177,7 +1177,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsSa7JSValueV_Sa7JSValueV {
             #if arch(wasm32)
             let _ = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSa7JSValueV_Sa7JSValueV(callbackValue)
+            call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSa7JSValueV_Sa7JSValueV(callbackValue)
             return [JSValue].bridgeJSLiftReturn()
             #else
             fatalError("Only available on WebAssembly")
@@ -1211,15 +1211,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSa7
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSa8JSObjectC_Sa8JSObjectC")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSa8JSObjectC_Sa8JSObjectC_extern(_ callback: Int32) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSa8JSObjectC_Sa8JSObjectC")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSa8JSObjectC_Sa8JSObjectC_extern(_ callback: Int32) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSa8JSObjectC_Sa8JSObjectC_extern(_ callback: Int32) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSa8JSObjectC_Sa8JSObjectC_extern(_ callback: Int32) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSa8JSObjectC_Sa8JSObjectC(_ callback: Int32) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSa8JSObjectC_Sa8JSObjectC_extern(callback)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSa8JSObjectC_Sa8JSObjectC(_ callback: Int32) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSa8JSObjectC_Sa8JSObjectC_extern(callback)
 }
 
 #if arch(wasm32)
@@ -1241,7 +1241,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsSa8JSObjectC_Sa8JSObjectC {
             #if arch(wasm32)
             let _ = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSa8JSObjectC_Sa8JSObjectC(callbackValue)
+            call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSa8JSObjectC_Sa8JSObjectC(callbackValue)
             return [JSObject].bridgeJSLiftReturn()
             #else
             fatalError("Only available on WebAssembly")
@@ -1275,15 +1275,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSa8
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSS_SaSS")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSS_SaSS_extern(_ callback: Int32) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSS_SaSS")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSS_SaSS_extern(_ callback: Int32) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSS_SaSS_extern(_ callback: Int32) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSS_SaSS_extern(_ callback: Int32) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSS_SaSS(_ callback: Int32) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSS_SaSS_extern(callback)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSS_SaSS(_ callback: Int32) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSS_SaSS_extern(callback)
 }
 
 #if arch(wasm32)
@@ -1305,7 +1305,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsSaSS_SaSS {
             #if arch(wasm32)
             let _ = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSS_SaSS(callbackValue)
+            call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSS_SaSS(callbackValue)
             return [String].bridgeJSLiftReturn()
             #else
             fatalError("Only available on WebAssembly")
@@ -1339,15 +1339,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaS
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSd_SaSd")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSd_SaSd_extern(_ callback: Int32) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSd_SaSd")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSd_SaSd_extern(_ callback: Int32) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSd_SaSd_extern(_ callback: Int32) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSd_SaSd_extern(_ callback: Int32) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSd_SaSd(_ callback: Int32) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSd_SaSd_extern(callback)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSd_SaSd(_ callback: Int32) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSd_SaSd_extern(callback)
 }
 
 #if arch(wasm32)
@@ -1369,7 +1369,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsSaSd_SaSd {
             #if arch(wasm32)
             let _ = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSd_SaSd(callbackValue)
+            call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSd_SaSd(callbackValue)
             return [Double].bridgeJSLiftReturn()
             #else
             fatalError("Only available on WebAssembly")
@@ -1403,15 +1403,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaS
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSiSaSi_Si")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSiSaSi_Si_extern(_ callback: Int32) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSiSaSi_Si")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSiSaSi_Si_extern(_ callback: Int32) -> Int32
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSiSaSi_Si_extern(_ callback: Int32) -> Int32 {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSiSaSi_Si_extern(_ callback: Int32) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSiSaSi_Si(_ callback: Int32) -> Int32 {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSiSaSi_Si_extern(callback)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSiSaSi_Si(_ callback: Int32) -> Int32 {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSiSaSi_Si_extern(callback)
 }
 
 #if arch(wasm32)
@@ -1434,7 +1434,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsSaSiSaSi_Si {
             let _ = param1.bridgeJSLowerParameter()
             let _ = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSiSaSi_Si(callbackValue)
+            let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSiSaSi_Si(callbackValue)
             return Int.bridgeJSLiftReturn(ret)
             #else
             fatalError("Only available on WebAssembly")
@@ -1469,15 +1469,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaS
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSi_SaSi")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSi_SaSi_extern(_ callback: Int32) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSi_SaSi")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSi_SaSi_extern(_ callback: Int32) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSi_SaSi_extern(_ callback: Int32) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSi_SaSi_extern(_ callback: Int32) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSi_SaSi(_ callback: Int32) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSi_SaSi_extern(callback)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSi_SaSi(_ callback: Int32) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSi_SaSi_extern(callback)
 }
 
 #if arch(wasm32)
@@ -1499,7 +1499,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsSaSi_SaSi {
             #if arch(wasm32)
             let _ = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSi_SaSi(callbackValue)
+            call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaSi_SaSi(callbackValue)
             return [Int].bridgeJSLiftReturn()
             #else
             fatalError("Only available on WebAssembly")
@@ -1533,15 +1533,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSaS
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_8Vector2DV")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_8Vector2DV_extern(_ callback: Int32, _ param0: Float64) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_8Vector2DV")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_8Vector2DV_extern(_ callback: Int32, _ param0: Float64) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_8Vector2DV_extern(_ callback: Int32, _ param0: Float64) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_8Vector2DV_extern(_ callback: Int32, _ param0: Float64) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_8Vector2DV(_ callback: Int32, _ param0: Float64) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_8Vector2DV_extern(callback, param0)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_8Vector2DV(_ callback: Int32, _ param0: Float64) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_8Vector2DV_extern(callback, param0)
 }
 
 #if arch(wasm32)
@@ -1563,7 +1563,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsSd_8Vector2DV {
             #if arch(wasm32)
             let param0Value = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_8Vector2DV(callbackValue, param0Value)
+            call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_8Vector2DV(callbackValue, param0Value)
             return Vector2D.bridgeJSLiftReturn()
             #else
             fatalError("Only available on WebAssembly")
@@ -1597,15 +1597,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_Sd")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_Sd_extern(_ callback: Int32, _ param0: Float64) -> Float64
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_Sd")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_Sd_extern(_ callback: Int32, _ param0: Float64) -> Float64
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_Sd_extern(_ callback: Int32, _ param0: Float64) -> Float64 {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_Sd_extern(_ callback: Int32, _ param0: Float64) -> Float64 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_Sd(_ callback: Int32, _ param0: Float64) -> Float64 {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_Sd_extern(callback, param0)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_Sd(_ callback: Int32, _ param0: Float64) -> Float64 {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_Sd_extern(callback, param0)
 }
 
 #if arch(wasm32)
@@ -1627,7 +1627,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsSd_Sd {
             #if arch(wasm32)
             let param0Value = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_Sd(callbackValue, param0Value)
+            let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_Sd(callbackValue, param0Value)
             return Double.bridgeJSLiftReturn(ret)
             #else
             fatalError("Only available on WebAssembly")
@@ -1661,15 +1661,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_Sq8Vector2DV")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_Sq8Vector2DV_extern(_ callback: Int32, _ param0: Float64) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_Sq8Vector2DV")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_Sq8Vector2DV_extern(_ callback: Int32, _ param0: Float64) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_Sq8Vector2DV_extern(_ callback: Int32, _ param0: Float64) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_Sq8Vector2DV_extern(_ callback: Int32, _ param0: Float64) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_Sq8Vector2DV(_ callback: Int32, _ param0: Float64) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_Sq8Vector2DV_extern(callback, param0)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_Sq8Vector2DV(_ callback: Int32, _ param0: Float64) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_Sq8Vector2DV_extern(callback, param0)
 }
 
 #if arch(wasm32)
@@ -1691,7 +1691,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsSd_Sq8Vector2DV {
             #if arch(wasm32)
             let param0Value = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_Sq8Vector2DV(callbackValue, param0Value)
+            call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_Sq8Vector2DV(callbackValue, param0Value)
             return Optional<Vector2D>.bridgeJSLiftReturn()
             #else
             fatalError("Only available on WebAssembly")
@@ -1725,15 +1725,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSd_
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSSSd_SS")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSSSd_SS_extern(_ callback: Int32, _ param0: Int32, _ param1Word0: Int32, _ param1Word1: Int32, _ param1Word2: Int32, _ param2: Float64) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSSSd_SS")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSSSd_SS_extern(_ callback: Int32, _ param0: Int32, _ param1Word0: Int32, _ param1Word1: Int32, _ param1Word2: Int32, _ param2: Float64) -> Int32
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSSSd_SS_extern(_ callback: Int32, _ param0: Int32, _ param1Word0: Int32, _ param1Word1: Int32, _ param1Word2: Int32, _ param2: Float64) -> Int32 {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSSSd_SS_extern(_ callback: Int32, _ param0: Int32, _ param1Word0: Int32, _ param1Word1: Int32, _ param1Word2: Int32, _ param2: Float64) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSSSd_SS(_ callback: Int32, _ param0: Int32, _ param1Word0: Int32, _ param1Word1: Int32, _ param1Word2: Int32, _ param2: Float64) -> Int32 {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSSSd_SS_extern(callback, param0, param1Word0, param1Word1, param1Word2, param2)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSSSd_SS(_ callback: Int32, _ param0: Int32, _ param1Word0: Int32, _ param1Word1: Int32, _ param1Word2: Int32, _ param2: Float64) -> Int32 {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSSSd_SS_extern(callback, param0, param1Word0, param1Word1, param1Word2, param2)
 }
 
 #if arch(wasm32)
@@ -1757,7 +1757,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsSiSSSd_SS {
                 let param2Value = param2.bridgeJSLowerParameter()
                 let param0Value = param0.bridgeJSLowerParameter()
                 let callbackValue = callback.bridgeJSLowerParameter()
-                let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSSSd_SS(callbackValue, param0Value, param1Word0, param1Word1, param1Word2, param2Value)
+                let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSSSd_SS(callbackValue, param0Value, param1Word0, param1Word1, param1Word2, param2Value)
                 return ret
             }
             let ret = ret0
@@ -1796,15 +1796,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiS
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSiSi_Si")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSiSi_Si_extern(_ callback: Int32, _ param0: Int32, _ param1: Int32, _ param2: Int32) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSiSi_Si")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSiSi_Si_extern(_ callback: Int32, _ param0: Int32, _ param1: Int32, _ param2: Int32) -> Int32
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSiSi_Si_extern(_ callback: Int32, _ param0: Int32, _ param1: Int32, _ param2: Int32) -> Int32 {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSiSi_Si_extern(_ callback: Int32, _ param0: Int32, _ param1: Int32, _ param2: Int32) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSiSi_Si(_ callback: Int32, _ param0: Int32, _ param1: Int32, _ param2: Int32) -> Int32 {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSiSi_Si_extern(callback, param0, param1, param2)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSiSi_Si(_ callback: Int32, _ param0: Int32, _ param1: Int32, _ param2: Int32) -> Int32 {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSiSi_Si_extern(callback, param0, param1, param2)
 }
 
 #if arch(wasm32)
@@ -1828,7 +1828,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsSiSiSi_Si {
             let param1Value = param1.bridgeJSLowerParameter()
             let param0Value = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSiSi_Si(callbackValue, param0Value, param1Value, param2Value)
+            let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSiSi_Si(callbackValue, param0Value, param1Value, param2Value)
             return Int.bridgeJSLiftReturn(ret)
             #else
             fatalError("Only available on WebAssembly")
@@ -1864,15 +1864,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiS
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSi_Si")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSi_Si_extern(_ callback: Int32, _ param0: Int32, _ param1: Int32) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSi_Si")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSi_Si_extern(_ callback: Int32, _ param0: Int32, _ param1: Int32) -> Int32
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSi_Si_extern(_ callback: Int32, _ param0: Int32, _ param1: Int32) -> Int32 {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSi_Si_extern(_ callback: Int32, _ param0: Int32, _ param1: Int32) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSi_Si(_ callback: Int32, _ param0: Int32, _ param1: Int32) -> Int32 {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSi_Si_extern(callback, param0, param1)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSi_Si(_ callback: Int32, _ param0: Int32, _ param1: Int32) -> Int32 {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSi_Si_extern(callback, param0, param1)
 }
 
 #if arch(wasm32)
@@ -1895,7 +1895,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsSiSi_Si {
             let param1Value = param1.bridgeJSLowerParameter()
             let param0Value = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSi_Si(callbackValue, param0Value, param1Value)
+            let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiSi_Si(callbackValue, param0Value, param1Value)
             return Int.bridgeJSLiftReturn(ret)
             #else
             fatalError("Only available on WebAssembly")
@@ -1930,15 +1930,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSiS
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSi_Si")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSi_Si_extern(_ callback: Int32, _ param0: Int32) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSi_Si")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSi_Si_extern(_ callback: Int32, _ param0: Int32) -> Int32
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSi_Si_extern(_ callback: Int32, _ param0: Int32) -> Int32 {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSi_Si_extern(_ callback: Int32, _ param0: Int32) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSi_Si(_ callback: Int32, _ param0: Int32) -> Int32 {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSi_Si_extern(callback, param0)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSi_Si(_ callback: Int32, _ param0: Int32) -> Int32 {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSi_Si_extern(callback, param0)
 }
 
 #if arch(wasm32)
@@ -1960,7 +1960,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsSi_Si {
             #if arch(wasm32)
             let param0Value = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSi_Si(callbackValue, param0Value)
+            let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSi_Si(callbackValue, param0Value)
             return Int.bridgeJSLiftReturn(ret)
             #else
             fatalError("Only available on WebAssembly")
@@ -1994,15 +1994,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSi_
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSi_y")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSi_y_extern(_ callback: Int32, _ param0: Int32) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSi_y")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSi_y_extern(_ callback: Int32, _ param0: Int32) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSi_y_extern(_ callback: Int32, _ param0: Int32) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSi_y_extern(_ callback: Int32, _ param0: Int32) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSi_y(_ callback: Int32, _ param0: Int32) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSi_y_extern(callback, param0)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSi_y(_ callback: Int32, _ param0: Int32) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSi_y_extern(callback, param0)
 }
 
 #if arch(wasm32)
@@ -2024,7 +2024,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsSi_y {
             #if arch(wasm32)
             let param0Value = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSi_y(callbackValue, param0Value)
+            call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSi_y(callbackValue, param0Value)
             #else
             fatalError("Only available on WebAssembly")
             #endif
@@ -2056,15 +2056,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSi_
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq13DataProcessorP_SS")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq13DataProcessorP_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0ObjectId: Int32) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq13DataProcessorP_SS")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq13DataProcessorP_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0ObjectId: Int32) -> Int32
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq13DataProcessorP_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0ObjectId: Int32) -> Int32 {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq13DataProcessorP_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0ObjectId: Int32) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq13DataProcessorP_SS(_ callback: Int32, _ param0IsSome: Int32, _ param0ObjectId: Int32) -> Int32 {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq13DataProcessorP_SS_extern(callback, param0IsSome, param0ObjectId)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq13DataProcessorP_SS(_ callback: Int32, _ param0IsSome: Int32, _ param0ObjectId: Int32) -> Int32 {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq13DataProcessorP_SS_extern(callback, param0IsSome, param0ObjectId)
 }
 
 #if arch(wasm32)
@@ -2091,7 +2091,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsSq13DataProcessorP_SS {
                 (param0IsSome, param0ObjectId) = (0, 0)
             }
             let callbackValue = callback.bridgeJSLowerParameter()
-            let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq13DataProcessorP_SS(callbackValue, param0IsSome, param0ObjectId)
+            let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq13DataProcessorP_SS(callbackValue, param0IsSome, param0ObjectId)
             return String.bridgeJSLiftReturn(ret)
             #else
             fatalError("Only available on WebAssembly")
@@ -2125,15 +2125,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq1
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq5ThemeO_SS")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq5ThemeO_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq5ThemeO_SS")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq5ThemeO_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq5ThemeO_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32 {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq5ThemeO_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq5ThemeO_SS(_ callback: Int32, _ param0IsSome: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32 {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq5ThemeO_SS_extern(callback, param0IsSome, param0Word0, param0Word1, param0Word2)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq5ThemeO_SS(_ callback: Int32, _ param0IsSome: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32 {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq5ThemeO_SS_extern(callback, param0IsSome, param0Word0, param0Word1, param0Word2)
 }
 
 #if arch(wasm32)
@@ -2155,7 +2155,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsSq5ThemeO_SS {
             #if arch(wasm32)
             let ret0 = param0.bridgeJSWithLoweredParameter { (param0IsSome, param0Word0, param0Word1, param0Word2) in
                 let callbackValue = callback.bridgeJSLowerParameter()
-                let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq5ThemeO_SS(callbackValue, param0IsSome, param0Word0, param0Word1, param0Word2)
+                let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq5ThemeO_SS(callbackValue, param0IsSome, param0Word0, param0Word1, param0Word2)
                 return ret
             }
             let ret = ret0
@@ -2192,15 +2192,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq5
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq7GreeterC_SS")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq7GreeterC_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Pointer: UnsafeMutableRawPointer) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq7GreeterC_SS")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq7GreeterC_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Pointer: UnsafeMutableRawPointer) -> Int32
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq7GreeterC_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Pointer: UnsafeMutableRawPointer) -> Int32 {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq7GreeterC_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Pointer: UnsafeMutableRawPointer) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq7GreeterC_SS(_ callback: Int32, _ param0IsSome: Int32, _ param0Pointer: UnsafeMutableRawPointer) -> Int32 {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq7GreeterC_SS_extern(callback, param0IsSome, param0Pointer)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq7GreeterC_SS(_ callback: Int32, _ param0IsSome: Int32, _ param0Pointer: UnsafeMutableRawPointer) -> Int32 {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq7GreeterC_SS_extern(callback, param0IsSome, param0Pointer)
 }
 
 #if arch(wasm32)
@@ -2222,7 +2222,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsSq7GreeterC_SS {
             #if arch(wasm32)
             let (param0IsSome, param0Pointer) = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq7GreeterC_SS(callbackValue, param0IsSome, param0Pointer)
+            let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq7GreeterC_SS(callbackValue, param0IsSome, param0Pointer)
             return String.bridgeJSLiftReturn(ret)
             #else
             fatalError("Only available on WebAssembly")
@@ -2256,15 +2256,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq7
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq7GreeterC_Sq7GreeterC")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq7GreeterC_Sq7GreeterC_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Pointer: UnsafeMutableRawPointer) -> UnsafeMutableRawPointer
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq7GreeterC_Sq7GreeterC")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq7GreeterC_Sq7GreeterC_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Pointer: UnsafeMutableRawPointer) -> UnsafeMutableRawPointer
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq7GreeterC_Sq7GreeterC_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Pointer: UnsafeMutableRawPointer) -> UnsafeMutableRawPointer {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq7GreeterC_Sq7GreeterC_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Pointer: UnsafeMutableRawPointer) -> UnsafeMutableRawPointer {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq7GreeterC_Sq7GreeterC(_ callback: Int32, _ param0IsSome: Int32, _ param0Pointer: UnsafeMutableRawPointer) -> UnsafeMutableRawPointer {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq7GreeterC_Sq7GreeterC_extern(callback, param0IsSome, param0Pointer)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq7GreeterC_Sq7GreeterC(_ callback: Int32, _ param0IsSome: Int32, _ param0Pointer: UnsafeMutableRawPointer) -> UnsafeMutableRawPointer {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq7GreeterC_Sq7GreeterC_extern(callback, param0IsSome, param0Pointer)
 }
 
 #if arch(wasm32)
@@ -2286,7 +2286,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsSq7GreeterC_Sq7GreeterC {
             #if arch(wasm32)
             let (param0IsSome, param0Pointer) = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq7GreeterC_Sq7GreeterC(callbackValue, param0IsSome, param0Pointer)
+            let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq7GreeterC_Sq7GreeterC(callbackValue, param0IsSome, param0Pointer)
             return Optional<Greeter>.bridgeJSLiftReturn(ret)
             #else
             fatalError("Only available on WebAssembly")
@@ -2320,15 +2320,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq7
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq9APIResultO_SS")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq9APIResultO_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0CaseId: Int32) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq9APIResultO_SS")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq9APIResultO_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0CaseId: Int32) -> Int32
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq9APIResultO_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0CaseId: Int32) -> Int32 {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq9APIResultO_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0CaseId: Int32) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq9APIResultO_SS(_ callback: Int32, _ param0IsSome: Int32, _ param0CaseId: Int32) -> Int32 {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq9APIResultO_SS_extern(callback, param0IsSome, param0CaseId)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq9APIResultO_SS(_ callback: Int32, _ param0IsSome: Int32, _ param0CaseId: Int32) -> Int32 {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq9APIResultO_SS_extern(callback, param0IsSome, param0CaseId)
 }
 
 #if arch(wasm32)
@@ -2350,7 +2350,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsSq9APIResultO_SS {
             #if arch(wasm32)
             let (param0IsSome, param0CaseId) = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq9APIResultO_SS(callbackValue, param0IsSome, param0CaseId)
+            let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq9APIResultO_SS(callbackValue, param0IsSome, param0CaseId)
             return String.bridgeJSLiftReturn(ret)
             #else
             fatalError("Only available on WebAssembly")
@@ -2384,15 +2384,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq9
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq9DirectionO_SS")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq9DirectionO_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Value: Int32) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq9DirectionO_SS")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq9DirectionO_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Value: Int32) -> Int32
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq9DirectionO_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Value: Int32) -> Int32 {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq9DirectionO_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Value: Int32) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq9DirectionO_SS(_ callback: Int32, _ param0IsSome: Int32, _ param0Value: Int32) -> Int32 {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq9DirectionO_SS_extern(callback, param0IsSome, param0Value)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq9DirectionO_SS(_ callback: Int32, _ param0IsSome: Int32, _ param0Value: Int32) -> Int32 {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq9DirectionO_SS_extern(callback, param0IsSome, param0Value)
 }
 
 #if arch(wasm32)
@@ -2414,7 +2414,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsSq9DirectionO_SS {
             #if arch(wasm32)
             let (param0IsSome, param0Value) = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq9DirectionO_SS(callbackValue, param0IsSome, param0Value)
+            let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq9DirectionO_SS(callbackValue, param0IsSome, param0Value)
             return String.bridgeJSLiftReturn(ret)
             #else
             fatalError("Only available on WebAssembly")
@@ -2448,15 +2448,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSq9
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSqSS_SS")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSqSS_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSqSS_SS")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSqSS_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSqSS_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32 {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSqSS_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSqSS_SS(_ callback: Int32, _ param0IsSome: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32 {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSqSS_SS_extern(callback, param0IsSome, param0Word0, param0Word1, param0Word2)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSqSS_SS(_ callback: Int32, _ param0IsSome: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Int32 {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSqSS_SS_extern(callback, param0IsSome, param0Word0, param0Word1, param0Word2)
 }
 
 #if arch(wasm32)
@@ -2478,7 +2478,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsSqSS_SS {
             #if arch(wasm32)
             let ret0 = param0.bridgeJSWithLoweredParameter { (param0IsSome, param0Word0, param0Word1, param0Word2) in
                 let callbackValue = callback.bridgeJSLowerParameter()
-                let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSqSS_SS(callbackValue, param0IsSome, param0Word0, param0Word1, param0Word2)
+                let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSqSS_SS(callbackValue, param0IsSome, param0Word0, param0Word1, param0Word2)
                 return ret
             }
             let ret = ret0
@@ -2515,15 +2515,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSqS
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSqSi_SS")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSqSi_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Value: Int32) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSqSi_SS")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSqSi_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Value: Int32) -> Int32
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSqSi_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Value: Int32) -> Int32 {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSqSi_SS_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Value: Int32) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSqSi_SS(_ callback: Int32, _ param0IsSome: Int32, _ param0Value: Int32) -> Int32 {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSqSi_SS_extern(callback, param0IsSome, param0Value)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSqSi_SS(_ callback: Int32, _ param0IsSome: Int32, _ param0Value: Int32) -> Int32 {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSqSi_SS_extern(callback, param0IsSome, param0Value)
 }
 
 #if arch(wasm32)
@@ -2545,7 +2545,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsSqSi_SS {
             #if arch(wasm32)
             let (param0IsSome, param0Value) = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSqSi_SS(callbackValue, param0IsSome, param0Value)
+            let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSqSi_SS(callbackValue, param0IsSome, param0Value)
             return String.bridgeJSLiftReturn(ret)
             #else
             fatalError("Only available on WebAssembly")
@@ -2579,15 +2579,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsSqS
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSS_SS")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSS_SS_extern(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSS_SS")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSS_SS_extern(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSS_SS_extern(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSS_SS_extern(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSS_SS(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSS_SS_extern(resolveRef, rejectRef, callback, param0Word0, param0Word1, param0Word2)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSS_SS(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSS_SS_extern(resolveRef, rejectRef, callback, param0Word0, param0Word1, param0Word2)
 }
 
 #if arch(wasm32)
@@ -2614,7 +2614,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsYaKSS_SS {
                 }) { resolveRef, rejectRef in
                 param0.bridgeJSWithLoweredParameter { (param0Word0, param0Word1, param0Word2) in
                     let callbackValue = callback.bridgeJSLowerParameter()
-                    invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSS_SS(resolveRef, rejectRef, callbackValue, param0Word0, param0Word1, param0Word2)
+                    call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSS_SS(resolveRef, rejectRef, callbackValue, param0Word0, param0Word1, param0Word2)
                 }
             }
             return resolved
@@ -2651,15 +2651,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaK
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSS_y")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSS_y_extern(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSS_y")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSS_y_extern(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSS_y_extern(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSS_y_extern(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSS_y(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSS_y_extern(resolveRef, rejectRef, callback, param0Word0, param0Word1, param0Word2)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSS_y(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSS_y_extern(resolveRef, rejectRef, callback, param0Word0, param0Word1, param0Word2)
 }
 
 #if arch(wasm32)
@@ -2686,7 +2686,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsYaKSS_y {
                 }) { resolveRef, rejectRef in
                 param0.bridgeJSWithLoweredParameter { (param0Word0, param0Word1, param0Word2) in
                     let callbackValue = callback.bridgeJSLowerParameter()
-                    invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSS_y(resolveRef, rejectRef, callbackValue, param0Word0, param0Word1, param0Word2)
+                    call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSS_y(resolveRef, rejectRef, callbackValue, param0Word0, param0Word1, param0Word2)
                 }
             }
             #else
@@ -2722,15 +2722,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaK
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSb_18AsyncPayloadResultO")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSb_18AsyncPayloadResultO_extern(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32, _ param0: Int32) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSb_18AsyncPayloadResultO")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSb_18AsyncPayloadResultO_extern(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32, _ param0: Int32) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSb_18AsyncPayloadResultO_extern(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32, _ param0: Int32) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSb_18AsyncPayloadResultO_extern(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32, _ param0: Int32) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSb_18AsyncPayloadResultO(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32, _ param0: Int32) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSb_18AsyncPayloadResultO_extern(resolveRef, rejectRef, callback, param0)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSb_18AsyncPayloadResultO(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32, _ param0: Int32) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSb_18AsyncPayloadResultO_extern(resolveRef, rejectRef, callback, param0)
 }
 
 #if arch(wasm32)
@@ -2757,7 +2757,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsYaKSb_18AsyncPayloadResultO {
                 }) { resolveRef, rejectRef in
                 let param0Value = param0.bridgeJSLowerParameter()
                 let callbackValue = callback.bridgeJSLowerParameter()
-                invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSb_18AsyncPayloadResultO(resolveRef, rejectRef, callbackValue, param0Value)
+                call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaKSb_18AsyncPayloadResultO(resolveRef, rejectRef, callbackValue, param0Value)
             }
             return resolved
             #else
@@ -2793,15 +2793,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaK
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSS_SS")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSS_SS_extern(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSS_SS")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSS_SS_extern(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSS_SS_extern(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSS_SS_extern(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSS_SS(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSS_SS_extern(resolveRef, rejectRef, callback, param0Word0, param0Word1, param0Word2)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSS_SS(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSS_SS_extern(resolveRef, rejectRef, callback, param0Word0, param0Word1, param0Word2)
 }
 
 #if arch(wasm32)
@@ -2828,7 +2828,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsYaSS_SS {
                 }) { resolveRef, rejectRef in
                 param0.bridgeJSWithLoweredParameter { (param0Word0, param0Word1, param0Word2) in
                     let callbackValue = callback.bridgeJSLowerParameter()
-                    invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSS_SS(resolveRef, rejectRef, callbackValue, param0Word0, param0Word1, param0Word2)
+                    call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSS_SS(resolveRef, rejectRef, callbackValue, param0Word0, param0Word1, param0Word2)
                 }
             }
             return resolved
@@ -2865,15 +2865,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaS
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSaSi_Si")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSaSi_Si_extern(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSaSi_Si")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSaSi_Si_extern(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSaSi_Si_extern(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSaSi_Si_extern(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSaSi_Si(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSaSi_Si_extern(resolveRef, rejectRef, callback)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSaSi_Si(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSaSi_Si_extern(resolveRef, rejectRef, callback)
 }
 
 #if arch(wasm32)
@@ -2900,7 +2900,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsYaSaSi_Si {
                 }) { resolveRef, rejectRef in
                 let _ = param0.bridgeJSLowerParameter()
                 let callbackValue = callback.bridgeJSLowerParameter()
-                invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSaSi_Si(resolveRef, rejectRef, callbackValue)
+                call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSaSi_Si(resolveRef, rejectRef, callbackValue)
             }
             return resolved
             #else
@@ -2936,15 +2936,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaS
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSd_9DataPointV")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSd_9DataPointV_extern(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32, _ param0: Float64) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSd_9DataPointV")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSd_9DataPointV_extern(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32, _ param0: Float64) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSd_9DataPointV_extern(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32, _ param0: Float64) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSd_9DataPointV_extern(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32, _ param0: Float64) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSd_9DataPointV(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32, _ param0: Float64) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSd_9DataPointV_extern(resolveRef, rejectRef, callback, param0)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSd_9DataPointV(_ resolveRef: Int32, _ rejectRef: Int32, _ callback: Int32, _ param0: Float64) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSd_9DataPointV_extern(resolveRef, rejectRef, callback, param0)
 }
 
 #if arch(wasm32)
@@ -2971,7 +2971,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsYaSd_9DataPointV {
                 }) { resolveRef, rejectRef in
                 let param0Value = param0.bridgeJSLowerParameter()
                 let callbackValue = callback.bridgeJSLowerParameter()
-                invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSd_9DataPointV(resolveRef, rejectRef, callbackValue, param0Value)
+                call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaSd_9DataPointV(resolveRef, rejectRef, callbackValue, param0Value)
             }
             return resolved
             #else
@@ -3007,15 +3007,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsYaS
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss11FeatureFlagO_y")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss11FeatureFlagO_y_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss11FeatureFlagO_y")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss11FeatureFlagO_y_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss11FeatureFlagO_y_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss11FeatureFlagO_y_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss11FeatureFlagO_y(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss11FeatureFlagO_y_extern(callback, param0Word0, param0Word1, param0Word2)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss11FeatureFlagO_y(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss11FeatureFlagO_y_extern(callback, param0Word0, param0Word1, param0Word2)
 }
 
 #if arch(wasm32)
@@ -3037,7 +3037,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestss11FeatureFlagO_y {
             #if arch(wasm32)
             param0.bridgeJSWithLoweredParameter { (param0Word0, param0Word1, param0Word2) in
                 let callbackValue = callback.bridgeJSLowerParameter()
-                invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss11FeatureFlagO_y(callbackValue, param0Word0, param0Word1, param0Word2)
+                call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss11FeatureFlagO_y(callbackValue, param0Word0, param0Word1, param0Word2)
             }
             #else
             fatalError("Only available on WebAssembly")
@@ -3070,15 +3070,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss11
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss11WeatherDataC_y")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss11WeatherDataC_y_extern(_ callback: Int32, _ param0: Int32) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss11WeatherDataC_y")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss11WeatherDataC_y_extern(_ callback: Int32, _ param0: Int32) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss11WeatherDataC_y_extern(_ callback: Int32, _ param0: Int32) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss11WeatherDataC_y_extern(_ callback: Int32, _ param0: Int32) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss11WeatherDataC_y(_ callback: Int32, _ param0: Int32) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss11WeatherDataC_y_extern(callback, param0)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss11WeatherDataC_y(_ callback: Int32, _ param0: Int32) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss11WeatherDataC_y_extern(callback, param0)
 }
 
 #if arch(wasm32)
@@ -3100,7 +3100,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestss11WeatherDataC_y {
             #if arch(wasm32)
             let param0Value = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss11WeatherDataC_y(callbackValue, param0Value)
+            call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss11WeatherDataC_y(callbackValue, param0Value)
             #else
             fatalError("Only available on WebAssembly")
             #endif
@@ -3132,15 +3132,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss11
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss18AsyncPayloadResultO_y")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss18AsyncPayloadResultO_y_extern(_ callback: Int32, _ param0: Int32) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss18AsyncPayloadResultO_y")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss18AsyncPayloadResultO_y_extern(_ callback: Int32, _ param0: Int32) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss18AsyncPayloadResultO_y_extern(_ callback: Int32, _ param0: Int32) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss18AsyncPayloadResultO_y_extern(_ callback: Int32, _ param0: Int32) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss18AsyncPayloadResultO_y(_ callback: Int32, _ param0: Int32) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss18AsyncPayloadResultO_y_extern(callback, param0)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss18AsyncPayloadResultO_y(_ callback: Int32, _ param0: Int32) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss18AsyncPayloadResultO_y_extern(callback, param0)
 }
 
 #if arch(wasm32)
@@ -3162,7 +3162,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestss18AsyncPayloadResultO_y {
             #if arch(wasm32)
             let param0CaseId = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss18AsyncPayloadResultO_y(callbackValue, param0CaseId)
+            call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss18AsyncPayloadResultO_y(callbackValue, param0CaseId)
             #else
             fatalError("Only available on WebAssembly")
             #endif
@@ -3194,15 +3194,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss18
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss26AsyncImportedPayloadResultO_y")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss26AsyncImportedPayloadResultO_y_extern(_ callback: Int32, _ param0: Int32) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss26AsyncImportedPayloadResultO_y")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss26AsyncImportedPayloadResultO_y_extern(_ callback: Int32, _ param0: Int32) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss26AsyncImportedPayloadResultO_y_extern(_ callback: Int32, _ param0: Int32) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss26AsyncImportedPayloadResultO_y_extern(_ callback: Int32, _ param0: Int32) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss26AsyncImportedPayloadResultO_y(_ callback: Int32, _ param0: Int32) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss26AsyncImportedPayloadResultO_y_extern(callback, param0)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss26AsyncImportedPayloadResultO_y(_ callback: Int32, _ param0: Int32) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss26AsyncImportedPayloadResultO_y_extern(callback, param0)
 }
 
 #if arch(wasm32)
@@ -3224,7 +3224,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestss26AsyncImportedPayloadResultO_y
             #if arch(wasm32)
             let param0CaseId = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss26AsyncImportedPayloadResultO_y(callbackValue, param0CaseId)
+            call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss26AsyncImportedPayloadResultO_y(callbackValue, param0CaseId)
             #else
             fatalError("Only available on WebAssembly")
             #endif
@@ -3256,15 +3256,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss26
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss7JSValueV_y")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss7JSValueV_y_extern(_ callback: Int32, _ param0Kind: Int32, _ param0Payload1: Int32, _ param0Payload2: Float64) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss7JSValueV_y")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss7JSValueV_y_extern(_ callback: Int32, _ param0Kind: Int32, _ param0Payload1: Int32, _ param0Payload2: Float64) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss7JSValueV_y_extern(_ callback: Int32, _ param0Kind: Int32, _ param0Payload1: Int32, _ param0Payload2: Float64) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss7JSValueV_y_extern(_ callback: Int32, _ param0Kind: Int32, _ param0Payload1: Int32, _ param0Payload2: Float64) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss7JSValueV_y(_ callback: Int32, _ param0Kind: Int32, _ param0Payload1: Int32, _ param0Payload2: Float64) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss7JSValueV_y_extern(callback, param0Kind, param0Payload1, param0Payload2)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss7JSValueV_y(_ callback: Int32, _ param0Kind: Int32, _ param0Payload1: Int32, _ param0Payload2: Float64) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss7JSValueV_y_extern(callback, param0Kind, param0Payload1, param0Payload2)
 }
 
 #if arch(wasm32)
@@ -3286,7 +3286,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestss7JSValueV_y {
             #if arch(wasm32)
             let (param0Kind, param0Payload1, param0Payload2) = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss7JSValueV_y(callbackValue, param0Kind, param0Payload1, param0Payload2)
+            call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss7JSValueV_y(callbackValue, param0Kind, param0Payload1, param0Payload2)
             #else
             fatalError("Only available on WebAssembly")
             #endif
@@ -3318,15 +3318,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss7J
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss9DataPointV_y")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss9DataPointV_y_extern(_ callback: Int32) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss9DataPointV_y")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss9DataPointV_y_extern(_ callback: Int32) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss9DataPointV_y_extern(_ callback: Int32) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss9DataPointV_y_extern(_ callback: Int32) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss9DataPointV_y(_ callback: Int32) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss9DataPointV_y_extern(callback)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss9DataPointV_y(_ callback: Int32) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss9DataPointV_y_extern(callback)
 }
 
 #if arch(wasm32)
@@ -3348,7 +3348,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestss9DataPointV_y {
             #if arch(wasm32)
             let _ = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss9DataPointV_y(callbackValue)
+            call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss9DataPointV_y(callbackValue)
             #else
             fatalError("Only available on WebAssembly")
             #endif
@@ -3380,15 +3380,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestss9D
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSS_y")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSS_y_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSS_y")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSS_y_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSS_y_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSS_y_extern(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSS_y(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSS_y_extern(callback, param0Word0, param0Word1, param0Word2)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSS_y(_ callback: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSS_y_extern(callback, param0Word0, param0Word1, param0Word2)
 }
 
 #if arch(wasm32)
@@ -3410,7 +3410,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestssSS_y {
             #if arch(wasm32)
             param0.bridgeJSWithLoweredParameter { (param0Word0, param0Word1, param0Word2) in
                 let callbackValue = callback.bridgeJSLowerParameter()
-                invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSS_y(callbackValue, param0Word0, param0Word1, param0Word2)
+                call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSS_y(callbackValue, param0Word0, param0Word1, param0Word2)
             }
             #else
             fatalError("Only available on WebAssembly")
@@ -3443,15 +3443,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSS
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSS_y")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSS_y_extern(_ callback: Int32) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSS_y")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSS_y_extern(_ callback: Int32) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSS_y_extern(_ callback: Int32) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSS_y_extern(_ callback: Int32) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSS_y(_ callback: Int32) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSS_y_extern(callback)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSS_y(_ callback: Int32) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSS_y_extern(callback)
 }
 
 #if arch(wasm32)
@@ -3473,7 +3473,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestssSaSS_y {
             #if arch(wasm32)
             let _ = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSS_y(callbackValue)
+            call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSS_y(callbackValue)
             #else
             fatalError("Only available on WebAssembly")
             #endif
@@ -3505,15 +3505,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSa
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSb_y")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSb_y_extern(_ callback: Int32) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSb_y")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSb_y_extern(_ callback: Int32) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSb_y_extern(_ callback: Int32) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSb_y_extern(_ callback: Int32) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSb_y(_ callback: Int32) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSb_y_extern(callback)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSb_y(_ callback: Int32) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSb_y_extern(callback)
 }
 
 #if arch(wasm32)
@@ -3535,7 +3535,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestssSaSb_y {
             #if arch(wasm32)
             let _ = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSb_y(callbackValue)
+            call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSb_y(callbackValue)
             #else
             fatalError("Only available on WebAssembly")
             #endif
@@ -3567,15 +3567,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSa
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSd_y")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSd_y_extern(_ callback: Int32) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSd_y")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSd_y_extern(_ callback: Int32) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSd_y_extern(_ callback: Int32) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSd_y_extern(_ callback: Int32) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSd_y(_ callback: Int32) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSd_y_extern(callback)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSd_y(_ callback: Int32) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSd_y_extern(callback)
 }
 
 #if arch(wasm32)
@@ -3597,7 +3597,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestssSaSd_y {
             #if arch(wasm32)
             let _ = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSd_y(callbackValue)
+            call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSaSd_y(callbackValue)
             #else
             fatalError("Only available on WebAssembly")
             #endif
@@ -3629,15 +3629,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSa
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSb_y")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSb_y_extern(_ callback: Int32, _ param0: Int32) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSb_y")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSb_y_extern(_ callback: Int32, _ param0: Int32) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSb_y_extern(_ callback: Int32, _ param0: Int32) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSb_y_extern(_ callback: Int32, _ param0: Int32) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSb_y(_ callback: Int32, _ param0: Int32) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSb_y_extern(callback, param0)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSb_y(_ callback: Int32, _ param0: Int32) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSb_y_extern(callback, param0)
 }
 
 #if arch(wasm32)
@@ -3659,7 +3659,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestssSb_y {
             #if arch(wasm32)
             let param0Value = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSb_y(callbackValue, param0Value)
+            call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSb_y(callbackValue, param0Value)
             #else
             fatalError("Only available on WebAssembly")
             #endif
@@ -3691,15 +3691,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSb
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSd_y")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSd_y_extern(_ callback: Int32, _ param0: Float64) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSd_y")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSd_y_extern(_ callback: Int32, _ param0: Float64) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSd_y_extern(_ callback: Int32, _ param0: Float64) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSd_y_extern(_ callback: Int32, _ param0: Float64) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSd_y(_ callback: Int32, _ param0: Float64) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSd_y_extern(callback, param0)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSd_y(_ callback: Int32, _ param0: Float64) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSd_y_extern(callback, param0)
 }
 
 #if arch(wasm32)
@@ -3721,7 +3721,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestssSd_y {
             #if arch(wasm32)
             let param0Value = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSd_y(callbackValue, param0Value)
+            call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSd_y(callbackValue, param0Value)
             #else
             fatalError("Only available on WebAssembly")
             #endif
@@ -3753,15 +3753,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSd
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSi_y")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSi_y_extern(_ callback: Int32, _ param0: Int32) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSi_y")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSi_y_extern(_ callback: Int32, _ param0: Int32) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSi_y_extern(_ callback: Int32, _ param0: Int32) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSi_y_extern(_ callback: Int32, _ param0: Int32) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSi_y(_ callback: Int32, _ param0: Int32) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSi_y_extern(callback, param0)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSi_y(_ callback: Int32, _ param0: Int32) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSi_y_extern(callback, param0)
 }
 
 #if arch(wasm32)
@@ -3783,7 +3783,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestssSi_y {
             #if arch(wasm32)
             let param0Value = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSi_y(callbackValue, param0Value)
+            call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSi_y(callbackValue, param0Value)
             #else
             fatalError("Only available on WebAssembly")
             #endif
@@ -3815,15 +3815,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSi
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSq26AsyncImportedPayloadResultO_y")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSq26AsyncImportedPayloadResultO_y_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0CaseId: Int32) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSq26AsyncImportedPayloadResultO_y")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSq26AsyncImportedPayloadResultO_y_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0CaseId: Int32) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSq26AsyncImportedPayloadResultO_y_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0CaseId: Int32) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSq26AsyncImportedPayloadResultO_y_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0CaseId: Int32) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSq26AsyncImportedPayloadResultO_y(_ callback: Int32, _ param0IsSome: Int32, _ param0CaseId: Int32) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSq26AsyncImportedPayloadResultO_y_extern(callback, param0IsSome, param0CaseId)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSq26AsyncImportedPayloadResultO_y(_ callback: Int32, _ param0IsSome: Int32, _ param0CaseId: Int32) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSq26AsyncImportedPayloadResultO_y_extern(callback, param0IsSome, param0CaseId)
 }
 
 #if arch(wasm32)
@@ -3845,7 +3845,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestssSq26AsyncImportedPayloadResultO
             #if arch(wasm32)
             let (param0IsSome, param0CaseId) = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSq26AsyncImportedPayloadResultO_y(callbackValue, param0IsSome, param0CaseId)
+            call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSq26AsyncImportedPayloadResultO_y(callbackValue, param0IsSome, param0CaseId)
             #else
             fatalError("Only available on WebAssembly")
             #endif
@@ -3877,15 +3877,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSq
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSqSS_y")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSqSS_y_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSqSS_y")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSqSS_y_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSqSS_y_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSqSS_y_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSqSS_y(_ callback: Int32, _ param0IsSome: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSqSS_y_extern(callback, param0IsSome, param0Word0, param0Word1, param0Word2)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSqSS_y(_ callback: Int32, _ param0IsSome: Int32, _ param0Word0: Int32, _ param0Word1: Int32, _ param0Word2: Int32) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSqSS_y_extern(callback, param0IsSome, param0Word0, param0Word1, param0Word2)
 }
 
 #if arch(wasm32)
@@ -3907,7 +3907,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestssSqSS_y {
             #if arch(wasm32)
             param0.bridgeJSWithLoweredParameter { (param0IsSome, param0Word0, param0Word1, param0Word2) in
                 let callbackValue = callback.bridgeJSLowerParameter()
-                invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSqSS_y(callbackValue, param0IsSome, param0Word0, param0Word1, param0Word2)
+                call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSqSS_y(callbackValue, param0IsSome, param0Word0, param0Word1, param0Word2)
             }
             #else
             fatalError("Only available on WebAssembly")
@@ -3940,15 +3940,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSq
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSqSd_y")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSqSd_y_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Value: Float64) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSqSd_y")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSqSd_y_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Value: Float64) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSqSd_y_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Value: Float64) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSqSd_y_extern(_ callback: Int32, _ param0IsSome: Int32, _ param0Value: Float64) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSqSd_y(_ callback: Int32, _ param0IsSome: Int32, _ param0Value: Float64) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSqSd_y_extern(callback, param0IsSome, param0Value)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSqSd_y(_ callback: Int32, _ param0IsSome: Int32, _ param0Value: Float64) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSqSd_y_extern(callback, param0IsSome, param0Value)
 }
 
 #if arch(wasm32)
@@ -3970,7 +3970,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestssSqSd_y {
             #if arch(wasm32)
             let (param0IsSome, param0Value) = param0.bridgeJSLowerParameter()
             let callbackValue = callback.bridgeJSLowerParameter()
-            invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSqSd_y(callbackValue, param0IsSome, param0Value)
+            call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSqSd_y(callbackValue, param0IsSome, param0Value)
             #else
             fatalError("Only available on WebAssembly")
             #endif
@@ -4002,15 +4002,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestssSq
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_13DataProcessorP")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_13DataProcessorP_extern(_ callback: Int32) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_13DataProcessorP")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_13DataProcessorP_extern(_ callback: Int32) -> Int32
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_13DataProcessorP_extern(_ callback: Int32) -> Int32 {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_13DataProcessorP_extern(_ callback: Int32) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_13DataProcessorP(_ callback: Int32) -> Int32 {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_13DataProcessorP_extern(callback)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_13DataProcessorP(_ callback: Int32) -> Int32 {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_13DataProcessorP_extern(callback)
 }
 
 #if arch(wasm32)
@@ -4031,7 +4031,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsy_13DataProcessorP {
         return { [callback] in
             #if arch(wasm32)
             let callbackValue = callback.bridgeJSLowerParameter()
-            let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_13DataProcessorP(callbackValue)
+            let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_13DataProcessorP(callbackValue)
             return AnyDataProcessor.bridgeJSLiftReturn(ret)
             #else
             fatalError("Only available on WebAssembly")
@@ -4064,15 +4064,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_1
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_Sb")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_Sb_extern(_ callback: Int32) -> Int32
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_Sb")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_Sb_extern(_ callback: Int32) -> Int32
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_Sb_extern(_ callback: Int32) -> Int32 {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_Sb_extern(_ callback: Int32) -> Int32 {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_Sb(_ callback: Int32) -> Int32 {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_Sb_extern(callback)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_Sb(_ callback: Int32) -> Int32 {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_Sb_extern(callback)
 }
 
 #if arch(wasm32)
@@ -4093,7 +4093,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsy_Sb {
         return { [callback] in
             #if arch(wasm32)
             let callbackValue = callback.bridgeJSLowerParameter()
-            let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_Sb(callbackValue)
+            let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_Sb(callbackValue)
             return Bool.bridgeJSLiftReturn(ret)
             #else
             fatalError("Only available on WebAssembly")
@@ -4126,15 +4126,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_S
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_Sq7GreeterC")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_Sq7GreeterC_extern(_ callback: Int32) -> UnsafeMutableRawPointer
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_Sq7GreeterC")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_Sq7GreeterC_extern(_ callback: Int32) -> UnsafeMutableRawPointer
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_Sq7GreeterC_extern(_ callback: Int32) -> UnsafeMutableRawPointer {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_Sq7GreeterC_extern(_ callback: Int32) -> UnsafeMutableRawPointer {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_Sq7GreeterC(_ callback: Int32) -> UnsafeMutableRawPointer {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_Sq7GreeterC_extern(callback)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_Sq7GreeterC(_ callback: Int32) -> UnsafeMutableRawPointer {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_Sq7GreeterC_extern(callback)
 }
 
 #if arch(wasm32)
@@ -4155,7 +4155,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsy_Sq7GreeterC {
         return { [callback] in
             #if arch(wasm32)
             let callbackValue = callback.bridgeJSLowerParameter()
-            let ret = invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_Sq7GreeterC(callbackValue)
+            let ret = call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_Sq7GreeterC(callbackValue)
             return Optional<Greeter>.bridgeJSLiftReturn(ret)
             #else
             fatalError("Only available on WebAssembly")
@@ -4188,15 +4188,15 @@ public func _invoke_swift_closure_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_S
 }
 
 #if arch(wasm32)
-@_extern(wasm, module: "bjs", name: "invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_y")
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_y_extern(_ callback: Int32) -> Void
+@_extern(wasm, module: "bjs", name: "call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_y")
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_y_extern(_ callback: Int32) -> Void
 #else
-fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_y_extern(_ callback: Int32) -> Void {
+fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_y_extern(_ callback: Int32) -> Void {
     fatalError("Only available on WebAssembly")
 }
 #endif
-@inline(never) fileprivate func invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_y(_ callback: Int32) -> Void {
-    return invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_y_extern(callback)
+@inline(never) fileprivate func call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_y(_ callback: Int32) -> Void {
+    return call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_y_extern(callback)
 }
 
 #if arch(wasm32)
@@ -4217,7 +4217,7 @@ private enum _BJS_Closure_20BridgeJSRuntimeTestsy_y {
         return { [callback] in
             #if arch(wasm32)
             let callbackValue = callback.bridgeJSLowerParameter()
-            invoke_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_y(callbackValue)
+            call_js_callback_BridgeJSRuntimeTests_20BridgeJSRuntimeTestsy_y(callbackValue)
             #else
             fatalError("Only available on WebAssembly")
             #endif

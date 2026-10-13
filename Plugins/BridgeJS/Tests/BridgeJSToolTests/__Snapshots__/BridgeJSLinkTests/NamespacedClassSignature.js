@@ -235,7 +235,7 @@ export async function createInstantiator(options, swift) {
                 const func = swift.memory.getObject(funcRef);
                 func.__unregister();
             }
-            bjs["invoke_js_callback_TestModule_10TestModule8Workshop5BenchC_8Workshop5BenchC"] = function(callbackId, param0) {
+            bjs["call_js_callback_TestModule_10TestModule8Workshop5BenchC_8Workshop5BenchC"] = function(callbackId, param0) {
                 try {
                     const callback = swift.memory.getObject(callbackId);
                     let ret = callback(_exports.Workshop.Bench.__construct(param0));

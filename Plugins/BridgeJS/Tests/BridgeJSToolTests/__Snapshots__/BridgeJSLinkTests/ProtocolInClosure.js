@@ -235,7 +235,7 @@ export async function createInstantiator(options, swift) {
                 const func = swift.memory.getObject(funcRef);
                 func.__unregister();
             }
-            bjs["invoke_js_callback_TestModule_10TestModule10RenderableP_10RenderableP"] = function(callbackId, param0) {
+            bjs["call_js_callback_TestModule_10TestModule10RenderableP_10RenderableP"] = function(callbackId, param0) {
                 try {
                     const callback = swift.memory.getObject(callbackId);
                     let ret = callback(swift.memory.getObject(param0));
@@ -260,7 +260,7 @@ export async function createInstantiator(options, swift) {
                 };
                 return makeClosure(boxPtr, file, line, lower_closure_TestModule_10TestModule10RenderableP_10RenderableP);
             }
-            bjs["invoke_js_callback_TestModule_10TestModule10RenderableP_SS"] = function(callbackId, param0) {
+            bjs["call_js_callback_TestModule_10TestModule10RenderableP_SS"] = function(callbackId, param0) {
                 try {
                     const callback = swift.memory.getObject(callbackId);
                     let ret = callback(swift.memory.getObject(param0));
@@ -285,7 +285,7 @@ export async function createInstantiator(options, swift) {
                 };
                 return makeClosure(boxPtr, file, line, lower_closure_TestModule_10TestModule10RenderableP_SS);
             }
-            bjs["invoke_js_callback_TestModule_10TestModuleSq10RenderableP_SS"] = function(callbackId, param0IsSome, param0ObjectId) {
+            bjs["call_js_callback_TestModule_10TestModuleSq10RenderableP_SS"] = function(callbackId, param0IsSome, param0ObjectId) {
                 try {
                     const callback = swift.memory.getObject(callbackId);
                     let ret = callback(param0IsSome ? swift.memory.getObject(param0ObjectId) : null);
@@ -317,7 +317,7 @@ export async function createInstantiator(options, swift) {
                 };
                 return makeClosure(boxPtr, file, line, lower_closure_TestModule_10TestModuleSq10RenderableP_SS);
             }
-            bjs["invoke_js_callback_TestModule_10TestModuley_10RenderableP"] = function(callbackId) {
+            bjs["call_js_callback_TestModule_10TestModuley_10RenderableP"] = function(callbackId) {
                 try {
                     const callback = swift.memory.getObject(callbackId);
                     let ret = callback();

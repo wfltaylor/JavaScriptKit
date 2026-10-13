@@ -1084,7 +1084,7 @@ public struct BridgeJSLink {
                     printer.write("}")
 
                     for signature in closureSignatures.sorted(by: { $0.mangleName < $1.mangleName }) {
-                        let invokeFuncName = "invoke_js_callback_\(moduleName)_\(signature.mangleName)"
+                        let invokeFuncName = "call_js_callback_\(moduleName)_\(signature.mangleName)"
                         let invokeLines = try generateInvokeFunction(
                             signature: signature,
                             functionName: invokeFuncName

@@ -325,7 +325,7 @@ export async function createInstantiator(options, swift) {
                 const func = swift.memory.getObject(funcRef);
                 func.__unregister();
             }
-            bjs["invoke_js_callback_TestModule_10TestModules7JSValueV_y"] = function(callbackId, param0Kind, param0Payload1, param0Payload2) {
+            bjs["call_js_callback_TestModule_10TestModules7JSValueV_y"] = function(callbackId, param0Kind, param0Payload1, param0Payload2) {
                 try {
                     const callback = swift.memory.getObject(callbackId);
                     const jsValue = __bjs_jsValueLift(param0Kind, param0Payload1, param0Payload2);
@@ -347,7 +347,7 @@ export async function createInstantiator(options, swift) {
                 };
                 return makeClosure(boxPtr, file, line, lower_closure_TestModule_10TestModules7JSValueV_y);
             }
-            bjs["invoke_js_callback_TestModule_10TestModulesSd_y"] = function(callbackId, param0) {
+            bjs["call_js_callback_TestModule_10TestModulesSd_y"] = function(callbackId, param0) {
                 try {
                     const callback = swift.memory.getObject(callbackId);
                     callback(param0);
@@ -367,7 +367,7 @@ export async function createInstantiator(options, swift) {
                 };
                 return makeClosure(boxPtr, file, line, lower_closure_TestModule_10TestModulesSd_y);
             }
-            bjs["invoke_js_callback_TestModule_10TestModuley_y"] = function(callbackId) {
+            bjs["call_js_callback_TestModule_10TestModuley_y"] = function(callbackId) {
                 try {
                     const callback = swift.memory.getObject(callbackId);
                     callback();

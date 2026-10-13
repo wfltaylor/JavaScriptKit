@@ -29,7 +29,7 @@ public struct ClosureCodegen {
         let helperName = "_BJS_Closure_\(mangledName)"
         let swiftClosureType = swiftClosureType(for: signature)
 
-        let externName = "invoke_js_callback_\(signature.moduleName)_\(mangledName)"
+        let externName = "call_js_callback_\(signature.moduleName)_\(mangledName)"
 
         // Use CallJSEmission to generate the callback invocation
         let builder = try ImportTS.CallJSEmission(
