@@ -2661,7 +2661,7 @@ where Key == String, Value: _BridgedSwiftStackType, Value.StackLiftResult == Val
 ///     (as `Int32`) and should pass them to the appropriate JS extern function.
 /// - Returns: The resolved value of type `T` from the Promise.
 /// - Throws: `JSException` if the Promise rejects.
-@_spi(BridgeJS) public func _bjs_awaitPromise<T, R: _BridgeJSReleasableClosure, E: _BridgeJSReleasableClosure>(
+@_spi(BridgeJS) nonisolated(nonsending) public func _bjs_awaitPromise<T, R: _BridgeJSReleasableClosure, E: _BridgeJSReleasableClosure>(
     makeResolveClosure: (@escaping (sending T) -> Void) -> R,
     makeRejectClosure: (@escaping (sending JSValue) -> Void) -> E,
     _ body: (_ resolveRef: Int32, _ rejectRef: Int32) -> Void
@@ -2691,7 +2691,7 @@ where Key == String, Value: _BridgedSwiftStackType, Value.StackLiftResult == Val
 ///
 /// Needed because `(Void) -> Void` is not the same as `() -> Void` in Swift (SE-0110),
 /// so the generic overload cannot handle void returns.
-@_spi(BridgeJS) public func _bjs_awaitPromise<R: _BridgeJSReleasableClosure, E: _BridgeJSReleasableClosure>(
+@_spi(BridgeJS) nonisolated(nonsending) public func _bjs_awaitPromise<R: _BridgeJSReleasableClosure, E: _BridgeJSReleasableClosure>(
     makeResolveClosure: (@escaping () -> Void) -> R,
     makeRejectClosure: (@escaping (sending JSValue) -> Void) -> E,
     _ body: (_ resolveRef: Int32, _ rejectRef: Int32) -> Void
