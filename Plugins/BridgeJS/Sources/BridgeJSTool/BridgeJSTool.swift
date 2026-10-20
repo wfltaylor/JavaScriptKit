@@ -23,6 +23,8 @@
 @preconcurrency import var Musl.stderr
 #elseif canImport(Android)
 @preconcurrency import var Android.stderr
+#elseif canImport(CRT)
+@preconcurrency import var CRT.stderr
 #endif
 
 import SwiftParser
