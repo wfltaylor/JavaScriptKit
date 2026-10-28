@@ -523,6 +523,20 @@ struct AnyMyViewControllerDelegate: MyViewControllerDelegate, _BridgedSwiftProto
     }
 }
 
+func _bridgeJSUnwrapProtocolExportable(
+    _ value: any MyViewControllerDelegate,
+    _ protocolName: StaticString
+) -> any _BridgedSwiftProtocolExportable {
+    if let wrapper = value as? AnyMyViewControllerDelegate {
+        return wrapper
+    }
+    #if hasFeature(Embedded)
+    fatalError("BridgeJS: only JavaScript-provided values can cross as 'any MyViewControllerDelegate' in Embedded Swift")
+    #else
+    return _bridgeJSUnwrapProtocolExportable(value as Any, protocolName)
+    #endif
+}
+
 #if arch(wasm32)
 @_extern(wasm, module: "TestModule", name: "bjs_MyViewControllerDelegate_onSomethingHappened")
 fileprivate func bjs_MyViewControllerDelegate_onSomethingHappened_extern(_ jsObject: Int32) -> Void
@@ -1068,7 +1082,7 @@ extension Priority: _BridgedSwiftEnumNoPayload, _BridgedSwiftRawValueEnum {
 @_cdecl("bjs_processDelegates")
 public func _bjs_processDelegates() -> Void {
     #if arch(wasm32)
-    let delegates = [AnyMyViewControllerDelegate].bridgeJSStackPop()
+    let delegates = [AnyMyViewControllerDelegate].bridgeJSStackPop().map { $0 as any MyViewControllerDelegate }
     let ret = processDelegates(_: delegates)
     for __bjs_elem_ret in ret {
         _swift_js_push_i32(_bridgeJSUnwrapProtocolExportable(__bjs_elem_ret, "MyViewControllerDelegate").bridgeJSLowerAsProtocolReturn())
@@ -1384,7 +1398,7 @@ fileprivate func _bjs_MyViewController_wrap_extern(_ pointer: UnsafeMutableRawPo
 @_cdecl("bjs_DelegateManager_init")
 public func _bjs_DelegateManager_init() -> UnsafeMutableRawPointer {
     #if arch(wasm32)
-    let delegates = [AnyMyViewControllerDelegate].bridgeJSStackPop()
+    let delegates = [AnyMyViewControllerDelegate].bridgeJSStackPop().map { $0 as any MyViewControllerDelegate }
     let ret = DelegateManager(delegates: delegates)
     return ret.bridgeJSLowerReturn()
     #else
@@ -1422,7 +1436,7 @@ public func _bjs_DelegateManager_delegates_get(_ _self: UnsafeMutableRawPointer)
 @_cdecl("bjs_DelegateManager_delegates_set")
 public func _bjs_DelegateManager_delegates_set(_ _self: UnsafeMutableRawPointer) -> Void {
     #if arch(wasm32)
-    let value = [AnyMyViewControllerDelegate].bridgeJSStackPop()
+    let value = [AnyMyViewControllerDelegate].bridgeJSStackPop().map { $0 as any MyViewControllerDelegate }
     let _self = DelegateManager.bridgeJSLiftParameter(_self)
     _self.delegates = value
     #else

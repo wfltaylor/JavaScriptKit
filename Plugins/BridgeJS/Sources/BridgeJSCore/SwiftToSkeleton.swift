@@ -3944,6 +3944,9 @@ extension BridgeType {
         case .string, .integer, .float, .double, .bool, .caseEnum, .rawValueEnum,
             .swiftStruct, .swiftHeapObject, .jsObject, .associatedValueEnum, .array:
             return true
+        // Stack lifting has no optional protocol form.
+        case .swiftProtocol:
+            return allowNullable
         case .alias(_, let underlying):
             return underlying.isSupportedAsAssociatedValue(allowNullable: false)
         case .nullable(let wrapped, _) where allowNullable:

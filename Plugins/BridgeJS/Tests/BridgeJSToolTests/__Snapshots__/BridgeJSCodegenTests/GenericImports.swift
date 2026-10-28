@@ -14,6 +14,20 @@ struct AnyGenericReadable: GenericReadable, _BridgedSwiftProtocolWrapper {
     }
 }
 
+func _bridgeJSUnwrapProtocolExportable(
+    _ value: any GenericReadable,
+    _ protocolName: StaticString
+) -> any _BridgedSwiftProtocolExportable {
+    if let wrapper = value as? AnyGenericReadable {
+        return wrapper
+    }
+    #if hasFeature(Embedded)
+    fatalError("BridgeJS: only JavaScript-provided values can cross as 'any GenericReadable' in Embedded Swift")
+    #else
+    return _bridgeJSUnwrapProtocolExportable(value as Any, protocolName)
+    #endif
+}
+
 #if arch(wasm32)
 @_extern(wasm, module: "TestModule", name: "bjs_GenericReadable_read")
 fileprivate func bjs_GenericReadable_read_extern(_ jsObject: Int32) -> Int32
@@ -49,6 +63,20 @@ struct AnyGenericWritable: GenericWritable, _BridgedSwiftProtocolWrapper {
     }
 }
 
+func _bridgeJSUnwrapProtocolExportable(
+    _ value: any GenericWritable,
+    _ protocolName: StaticString
+) -> any _BridgedSwiftProtocolExportable {
+    if let wrapper = value as? AnyGenericWritable {
+        return wrapper
+    }
+    #if hasFeature(Embedded)
+    fatalError("BridgeJS: only JavaScript-provided values can cross as 'any GenericWritable' in Embedded Swift")
+    #else
+    return _bridgeJSUnwrapProtocolExportable(value as Any, protocolName)
+    #endif
+}
+
 #if arch(wasm32)
 @_extern(wasm, module: "TestModule", name: "bjs_GenericWritable_value_get")
 fileprivate func bjs_GenericWritable_value_get_extern(_ jsObject: Int32) -> Int32
@@ -79,6 +107,20 @@ struct AnyGenericNode: GenericNode, _BridgedSwiftProtocolWrapper {
     static func bridgeJSLiftParameter(_ value: Int32) -> Self {
         return AnyGenericNode(jsObject: JSObject(id: UInt32(bitPattern: value)))
     }
+}
+
+func _bridgeJSUnwrapProtocolExportable(
+    _ value: any GenericNode,
+    _ protocolName: StaticString
+) -> any _BridgedSwiftProtocolExportable {
+    if let wrapper = value as? AnyGenericNode {
+        return wrapper
+    }
+    #if hasFeature(Embedded)
+    fatalError("BridgeJS: only JavaScript-provided values can cross as 'any GenericNode' in Embedded Swift")
+    #else
+    return _bridgeJSUnwrapProtocolExportable(value as Any, protocolName)
+    #endif
 }
 
 extension GenericColor: _BridgedSwiftCaseEnum {

@@ -273,6 +273,20 @@ struct AnyRenderable: Renderable, _BridgedSwiftProtocolWrapper {
     }
 }
 
+func _bridgeJSUnwrapProtocolExportable(
+    _ value: any Renderable,
+    _ protocolName: StaticString
+) -> any _BridgedSwiftProtocolExportable {
+    if let wrapper = value as? AnyRenderable {
+        return wrapper
+    }
+    #if hasFeature(Embedded)
+    fatalError("BridgeJS: only JavaScript-provided values can cross as 'any Renderable' in Embedded Swift")
+    #else
+    return _bridgeJSUnwrapProtocolExportable(value as Any, protocolName)
+    #endif
+}
+
 #if arch(wasm32)
 @_extern(wasm, module: "TestModule", name: "bjs_Renderable_render")
 fileprivate func bjs_Renderable_render_extern(_ jsObject: Int32) -> Int32

@@ -16,6 +16,20 @@ struct AnyHasOptionalUserId: HasOptionalUserId, _BridgedSwiftProtocolWrapper {
     }
 }
 
+func _bridgeJSUnwrapProtocolExportable(
+    _ value: any HasOptionalUserId,
+    _ protocolName: StaticString
+) -> any _BridgedSwiftProtocolExportable {
+    if let wrapper = value as? AnyHasOptionalUserId {
+        return wrapper
+    }
+    #if hasFeature(Embedded)
+    fatalError("BridgeJS: only JavaScript-provided values can cross as 'any HasOptionalUserId' in Embedded Swift")
+    #else
+    return _bridgeJSUnwrapProtocolExportable(value as Any, protocolName)
+    #endif
+}
+
 #if arch(wasm32)
 @_extern(wasm, module: "TestModule", name: "bjs_HasOptionalUserId_userId_get")
 fileprivate func bjs_HasOptionalUserId_userId_get_extern(_ jsObject: Int32) -> Void

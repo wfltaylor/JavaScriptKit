@@ -921,6 +921,12 @@ struct StackCodegen {
     /// - Returns: An ExprSyntax representing the lift expression
     func liftExpression(for type: BridgeType) -> ExprSyntax {
         switch type {
+        // Boxed element by element: converting the whole collection to one of existentials is a dynamic cast,
+        // which Embedded Swift rejects.
+        case .array(.swiftProtocol(let protocolName)):
+            return "\(raw: type.swiftType).bridgeJSStackPop().map { $0 as any \(raw: protocolName) }"
+        case .dictionary(.swiftProtocol(let protocolName)):
+            return "\(raw: type.swiftType).bridgeJSStackPop().mapValues { $0 as any \(raw: protocolName) }"
         case .string, .integer, .bool, .float, .double,
             .jsObject(nil), .jsValue, .swiftStruct, .swiftHeapObject, .unsafePointer,
             .swiftProtocol, .caseEnum, .associatedValueEnum, .rawValueEnum, .array, .dictionary, .alias:
@@ -1202,11 +1208,15 @@ struct EnumCodegen {
 
     private func renderAssociatedValueEnumHelpers(_ enumDef: ExportedEnum) -> DeclSyntax {
         let typeName = enumDef.swiftCallName
+        // Not `@_transparent` when a payload names a protocol's internal wrapper, which it cannot reference.
+        let inlinability =
+            enumDef.cases.contains { $0.associatedValues.contains { $0.type.containsSwiftProtocol } }
+            ? "" : "@_transparent "
         let printer = CodeFragmentPrinter()
         printer.write("extension \(typeName): _BridgedSwiftAssociatedValueEnum {")
         printer.indent {
             printer.write(
-                "@_spi(BridgeJS) @_transparent public static func bridgeJSStackPopPayload(_ caseId: Int32) -> \(typeName) {"
+                "@_spi(BridgeJS) \(inlinability)public static func bridgeJSStackPopPayload(_ caseId: Int32) -> \(typeName) {"
             )
             printer.indent {
                 printer.write("switch caseId {")
@@ -1220,7 +1230,7 @@ struct EnumCodegen {
             printer.write("}")
             printer.nextLine()
 
-            printer.write("@_spi(BridgeJS) @_transparent public consuming func bridgeJSStackPushPayload() -> Int32 {")
+            printer.write("@_spi(BridgeJS) \(inlinability)public consuming func bridgeJSStackPushPayload() -> Int32 {")
             printer.indent {
                 printer.write("switch self {")
                 generateReturnSwitchCases(printer: printer, enumDef: enumDef)
@@ -1311,17 +1321,21 @@ struct StructCodegen {
         let lowerFunctionName = "_bjs_struct_lower_\(structDef.abiName)"
         let liftFunctionName = "_bjs_struct_lift_\(structDef.abiName)"
 
+        // Not `@_transparent` when a field names a protocol's internal wrapper, which it cannot reference.
+        let inlinability =
+            structDef.properties.contains { !$0.isStatic && $0.type.containsSwiftProtocol } ? "" : "@_transparent "
+
         let printer = CodeFragmentPrinter()
         printer.write("extension \(typeName): _BridgedSwiftStruct {")
         printer.indent {
-            printer.write("@_spi(BridgeJS) @_transparent public static func bridgeJSStackPop() -> \(typeName) {")
+            printer.write("@_spi(BridgeJS) \(inlinability)public static func bridgeJSStackPop() -> \(typeName) {")
             printer.indent {
                 printer.write(lines: generateStructLiftCode(structDef: structDef))
             }
             printer.write("}")
             printer.nextLine()
 
-            printer.write("@_spi(BridgeJS) @_transparent public consuming func bridgeJSStackPush() {")
+            printer.write("@_spi(BridgeJS) \(inlinability)public consuming func bridgeJSStackPush() {")
             printer.indent {
                 printer.write(lines: generateStructLowerCode(structDef: structDef))
             }
@@ -1515,6 +1529,25 @@ struct ProtocolCodegen {
                 static func bridgeJSLiftParameter(_ value: Int32) -> Self {
                     return \(raw: wrapperName)(jsObject: JSObject(id: UInt32(bitPattern: value)))
                 }
+            }
+            """
+        )
+        // Preferred over the runtime's `Any` overload. Embedded Swift cannot cast to an existential, so there
+        // only JavaScript-provided values, which are always this wrapper, can be lowered.
+        decls.append(
+            """
+            func _bridgeJSUnwrapProtocolExportable(
+                _ value: any \(raw: protocolName),
+                _ protocolName: StaticString
+            ) -> any _BridgedSwiftProtocolExportable {
+                if let wrapper = value as? \(raw: wrapperName) {
+                    return wrapper
+                }
+                #if hasFeature(Embedded)
+                fatalError("BridgeJS: only JavaScript-provided values can cross as 'any \(raw: protocolName)' in Embedded Swift")
+                #else
+                return _bridgeJSUnwrapProtocolExportable(value as Any, protocolName)
+                #endif
             }
             """
         )
@@ -1723,6 +1756,17 @@ extension BridgeType {
     var isClosureType: Bool {
         if case .closure = self { return true }
         return false
+    }
+
+    /// Whether lifting this type names a protocol's module-internal `Any<Protocol>` wrapper, which an
+    /// inlinable stack helper cannot reference.
+    var containsSwiftProtocol: Bool {
+        switch self {
+        case .swiftProtocol: return true
+        case .nullable(let wrapped, _), .array(let wrapped), .dictionary(let wrapped), .alias(_, let wrapped):
+            return wrapped.containsSwiftProtocol
+        default: return false
+        }
     }
 
     struct LiftingIntrinsicInfo: Sendable {

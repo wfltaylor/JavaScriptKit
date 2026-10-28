@@ -2663,7 +2663,7 @@ struct IntrinsicJSFragment: Sendable {
                     return []
                 }
             )
-        case .void, .swiftProtocol, .namespaceEnum, .closure:
+        case .void, .namespaceEnum, .closure:
             // These types should not appear as struct fields - return error fragment
             return IntrinsicJSFragment(
                 parameters: ["value"],
@@ -2727,7 +2727,7 @@ struct IntrinsicJSFragment: Sendable {
                     return [varName]
                 }
             )
-        case .void, .swiftProtocol, .namespaceEnum, .closure:
+        case .void, .namespaceEnum, .closure:
             // These types should not appear as struct fields
             return IntrinsicJSFragment(
                 parameters: [],
